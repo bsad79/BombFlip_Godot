@@ -1,0 +1,2963 @@
+[gd_scene load_steps=54 format=2]
+
+[ext_resource path="res://Images/Numbers/Mark3.png" type="Texture" id=1]
+[ext_resource path="res://Images/Icons/bomb.png" type="Texture" id=2]
+[ext_resource path="res://Images/Text/BombFlipLogo.png" type="Texture" id=3]
+[ext_resource path="res://Images/Icons/MarkBomb.png" type="Texture" id=4]
+[ext_resource path="res://Images/Numbers/Mark1.png" type="Texture" id=5]
+[ext_resource path="res://NovaSquare-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Images/Numbers/Mark2.png" type="Texture" id=7]
+[ext_resource path="res://Images/Icons/X.png" type="Texture" id=8]
+[ext_resource path="res://Images/Text/TutorialText.png" type="Texture" id=9]
+[ext_resource path="res://Images/Icons/pencil.png" type="Texture" id=10]
+[ext_resource path="res://Images/Text/ClassicModeText.png" type="Texture" id=11]
+[ext_resource path="res://Images/Icons/MenuArrow.png" type="Texture" id=12]
+[ext_resource path="res://Images/Text/TimerModeText.png" type="Texture" id=13]
+[ext_resource path="res://Themes/Btn.tres" type="StyleBox" id=14]
+[ext_resource path="res://Themes/BtnHold.tres" type="StyleBox" id=15]
+[ext_resource path="res://Themes/BtnActive.tres" type="StyleBox" id=16]
+[ext_resource path="res://Themes/Table.tres" type="StyleBox" id=17]
+[ext_resource path="res://Themes/Red Box.tres" type="StyleBox" id=18]
+[ext_resource path="res://Themes/Black Box.tres" type="StyleBox" id=19]
+[ext_resource path="res://Scenes/Menu.gd" type="Script" id=20]
+[ext_resource path="res://Scenes/Back.gd" type="Script" id=21]
+[ext_resource path="res://Scenes/GridContainer.gd" type="Script" id=22]
+[ext_resource path="res://Scenes/Main.gd" type="Script" id=23]
+[ext_resource path="res://Scenes/MarkWindow.gd" type="Script" id=24]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0470588, 0.552941, 0.227451, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.701961, 0.12549, 0.160784, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.788235, 0.137255, 0.180392, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.486275, 0.0901961, 0.113725, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.701961, 0.12549, 0.160784, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.788235, 0.137255, 0.180392, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.486275, 0.0901961, 0.113725, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.701961, 0.12549, 0.160784, 1 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.788235, 0.137255, 0.180392, 1 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.486275, 0.0901961, 0.113725, 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.215686, 0.137255, 0.137255, 0 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 30
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0, 0, 0, 0.509804 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.905882, 0.937255, 0.866667, 1 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 60
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 40
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 30
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0.0470588, 0.552941, 0.227451, 1 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 60
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 0.905882, 0.937255, 0.866667, 1 )
+
+[sub_resource type="DynamicFont" id=22]
+size = 25
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=23]
+size = 25
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=24]
+bg_color = Color( 0, 0, 0, 0.509804 )
+
+[sub_resource type="StyleBoxFlat" id=25]
+bg_color = Color( 0.905882, 0.937255, 0.866667, 1 )
+
+[sub_resource type="StyleBoxFlat" id=26]
+bg_color = Color( 0, 0, 0, 0 )
+
+[sub_resource type="StyleBoxFlat" id=27]
+bg_color = Color( 0.431373, 0.431373, 0.431373, 1 )
+
+[sub_resource type="StyleBoxFlat" id=28]
+bg_color = Color( 0.47451, 0.454902, 0.454902, 1 )
+
+[sub_resource type="StyleBoxFlat" id=29]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[node name="Node" type="Node"]
+script = ExtResource( 20 )
+
+[node name="Menu" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Panel" parent="Menu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": true
+}
+
+[node name="Main" type="GridContainer" parent="Menu"]
+self_modulate = Color( 0.0470588, 0.552941, 0.227451, 1 )
+anchor_left = 0.3
+anchor_top = -0.0022673
+anchor_right = 0.7
+anchor_bottom = 0.997733
+custom_constants/vseparation = 16
+custom_constants/hseparation = 10
+script = ExtResource( 22 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Logo" type="Panel" parent="Menu/Main"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_right = 409.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 0, 200 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Menu/Main/Logo"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 20.0
+texture = ExtResource( 3 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Classic Mode" type="Button" parent="Menu/Main"]
+margin_top = 221.0
+margin_right = 409.0
+margin_bottom = 261.0
+rect_min_size = Vector2( 0, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 6
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Menu/Main/Classic Mode"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 11 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Timer Mode" type="Button" parent="Menu/Main"]
+margin_top = 287.0
+margin_right = 409.0
+margin_bottom = 327.0
+rect_min_size = Vector2( 0, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 6
+custom_styles/hover = SubResource( 5 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+
+[node name="TextureRect" type="TextureRect" parent="Menu/Main/Timer Mode"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 13 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tutorial" type="Button" parent="Menu/Main"]
+margin_top = 353.0
+margin_right = 409.0
+margin_bottom = 393.0
+rect_min_size = Vector2( 0, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 6
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/normal = SubResource( 10 )
+
+[node name="TextureRect" type="TextureRect" parent="Menu/Main/Tutorial"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 9 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Music" type="Panel" parent="Menu/Main"]
+margin_top = 414.0
+margin_right = 409.0
+margin_bottom = 464.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 11 )
+
+[node name="Music" type="CheckBox" parent="Menu/Main/Music"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 144.5
+margin_right = -144.5
+rect_min_size = Vector2( 0, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 2
+custom_fonts/font = SubResource( 12 )
+pressed = true
+text = "Music"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sfx" type="Panel" parent="Menu/Main"]
+margin_top = 480.0
+margin_right = 409.0
+margin_bottom = 530.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 11 )
+
+[node name="Sfx" type="CheckBox" parent="Menu/Main/Sfx"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 90.0
+margin_right = -90.0
+rect_min_size = Vector2( 0, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 2
+custom_fonts/font = SubResource( 12 )
+pressed = true
+text = "Sound Effects"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InvisibleAux" type="Panel" parent="Menu/Main"]
+margin_top = 546.0
+margin_right = 409.0
+margin_bottom = 596.0
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 13 )
+
+[node name="Tutorial" type="Panel" parent="Menu"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TWindow" type="Panel" parent="Menu/Tutorial"]
+anchor_left = 0.2
+anchor_top = 0.05
+anchor_right = 0.8
+anchor_bottom = 0.95
+custom_styles/panel = SubResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="Menu/Tutorial/TWindow"]
+anchor_left = 0.02
+anchor_right = 1.0
+anchor_bottom = 0.98
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Menu/Tutorial/TWindow/GridContainer"]
+margin_right = 602.0
+margin_bottom = 73.0
+rect_min_size = Vector2( 0, 70 )
+custom_fonts/font = SubResource( 16 )
+custom_colors/font_color = Color( 0.788235, 0.137255, 0.180392, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "How to play"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Close" type="Button" parent="Menu/Tutorial/TWindow/GridContainer/Label"]
+anchor_left = 0.9
+anchor_top = 0.05
+anchor_right = 0.99
+anchor_bottom = 1.0
+margin_left = -12.0
+custom_styles/hover = ExtResource( 15 )
+custom_styles/pressed = ExtResource( 16 )
+custom_styles/normal = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="Menu/Tutorial/TWindow/GridContainer/Label/Close"]
+anchor_left = 0.1
+anchor_top = 0.1
+anchor_right = 0.9
+anchor_bottom = 0.9
+texture = ExtResource( 8 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Menu/Tutorial/TWindow/GridContainer"]
+margin_top = 77.0
+margin_right = 602.0
+margin_bottom = 529.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/bold_font = SubResource( 17 )
+custom_fonts/normal_font = SubResource( 18 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_colors/selection_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_selected = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[b]Classic Mode[/b]
+BombFlip is a game in wich you flip over cards to find numbers hidden beneath them.
+The cards are hiding the numbers 1 through 3... and bombs as well.
+The first number you flip over will give you that many points.
+From them on, the number you find will add to the total amount of points you've collected by that number.
+If it's a 2, your total will be increased by 2.
+If it's a 3, your total will be increased by 3.
+But if you flip over a 1, your total will stay the same. And if you flip over a bomb, it's game over.
+When that happens, you'll lose all the points you've collected in the current game.
+Once you've found all the hidden 2 and 3 cards, you've cleared the game and will advance to the next level of difficulty.
+As the difficulty increases, you will be able to receive more points. Do your best!
+
+The numbers at the side of the board will give you a clue about the numbers hidden on the back of the panels.
+The larger the number, the more likely it is that there are many large numbers hidden in that row or column.
+In the same way, you can tell how many bombs are hidden in the row or column.
+Consider the hidden number totals and the bombs totals carefully as you flip over panels.
+
+[b]Timer Mode[/b]
+In this mode you will have a timer that will show how many seconds you have left before the end of the game.
+The game starts with 90 seconds, you can increase the time by flipping cards.
+The time will increase based on the number of the card flipped.
+If it's a 1, your total time will be increased by 1 second.
+If it's a 2, it will be increased by 2 seconds.
+And for a 3, 3 seconds.
+If you flip a bomb, game over. When that happens, you'll go back at the starting point.
+Once you've found all the hidden 2 and 3 cards, you've cleared the game and will advance to the next level of difficulty.
+
+The timer will maintain the time left through the difficulty levels, so be quick!"
+text = "Classic Mode
+BombFlip is a game in wich you flip over cards to find numbers hidden beneath them.
+The cards are hiding the numbers 1 through 3... and bombs as well.
+The first number you flip over will give you that many points.
+From them on, the number you find will add to the total amount of points you've collected by that number.
+If it's a 2, your total will be increased by 2.
+If it's a 3, your total will be increased by 3.
+But if you flip over a 1, your total will stay the same. And if you flip over a bomb, it's game over.
+When that happens, you'll lose all the points you've collected in the current game.
+Once you've found all the hidden 2 and 3 cards, you've cleared the game and will advance to the next level of difficulty.
+As the difficulty increases, you will be able to receive more points. Do your best!
+
+The numbers at the side of the board will give you a clue about the numbers hidden on the back of the panels.
+The larger the number, the more likely it is that there are many large numbers hidden in that row or column.
+In the same way, you can tell how many bombs are hidden in the row or column.
+Consider the hidden number totals and the bombs totals carefully as you flip over panels.
+
+Timer Mode
+In this mode you will have a timer that will show how many seconds you have left before the end of the game.
+The game starts with 90 seconds, you can increase the time by flipping cards.
+The time will increase based on the number of the card flipped.
+If it's a 1, your total time will be increased by 1 second.
+If it's a 2, it will be increased by 2 seconds.
+And for a 3, 3 seconds.
+If you flip a bomb, game over. When that happens, you'll go back at the starting point.
+Once you've found all the hidden 2 and 3 cards, you've cleared the game and will advance to the next level of difficulty.
+
+The timer will maintain the time left through the difficulty levels, so be quick!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Game" type="Control" parent="."]
+anchor_left = 0.001
+anchor_top = 0.001
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Panel" parent="Game"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 19 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Top" type="GridContainer" parent="Game"]
+anchor_right = 1.0
+anchor_bottom = 0.15
+columns = 2
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="Button" parent="Game/Top"]
+margin_right = 90.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 90, 90 )
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 15 )
+custom_styles/pressed = ExtResource( 16 )
+custom_styles/normal = ExtResource( 14 )
+script = ExtResource( 21 )
+
+[node name="TextureRect" type="TextureRect" parent="Game/Top/Back"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 12 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Placar_Timer" type="Label" parent="Game/Top"]
+margin_left = 94.0
+margin_right = 1022.0
+margin_bottom = 90.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 20 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0 )
+text = "0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Main" type="GridContainer" parent="Game"]
+anchor_top = 0.16
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 6
+script = ExtResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button1" type="Button" parent="Game/Main"]
+margin_right = 167.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 19 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/normal = ExtResource( 19 )
+
+[node name="MarkContainer" type="GridContainer" parent="Game/Main/Button1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bombMark" type="TextureRect" parent="Game/Main/Button1/MarkContainer"]
+margin_right = 81.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="oneMark" type="TextureRect" parent="Game/Main/Button1/MarkContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="twoMark" type="TextureRect" parent="Game/Main/Button1/MarkContainer"]
+margin_top = 42.0
+margin_right = 81.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="threeMark" type="TextureRect" parent="Game/Main/Button1/MarkContainer"]
+margin_left = 85.0
+margin_top = 42.0
+margin_right = 166.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="Panel" type="Panel" parent="Game/Main/Button1"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Button1/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Game/Main"]
+margin_left = 171.0
+margin_right = 338.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 18 )
+custom_styles/pressed = ExtResource( 18 )
+custom_styles/normal = ExtResource( 18 )
+
+[node name="MarkContainer" type="GridContainer" parent="Game/Main/Button2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bombMark" type="TextureRect" parent="Game/Main/Button2/MarkContainer"]
+margin_right = 81.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="oneMark" type="TextureRect" parent="Game/Main/Button2/MarkContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="twoMark" type="TextureRect" parent="Game/Main/Button2/MarkContainer"]
+margin_top = 42.0
+margin_right = 81.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="threeMark" type="TextureRect" parent="Game/Main/Button2/MarkContainer"]
+margin_left = 85.0
+margin_top = 42.0
+margin_right = 166.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Game/Main/Button2"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Button2/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="Game/Main"]
+margin_left = 342.0
+margin_right = 509.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 19 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/normal = ExtResource( 19 )
+
+[node name="MarkContainer" type="GridContainer" parent="Game/Main/Button3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bombMark" type="TextureRect" parent="Game/Main/Button3/MarkContainer"]
+margin_right = 81.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="oneMark" type="TextureRect" parent="Game/Main/Button3/MarkContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="twoMark" type="TextureRect" parent="Game/Main/Button3/MarkContainer"]
+margin_top = 42.0
+margin_right = 81.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="threeMark" type="TextureRect" parent="Game/Main/Button3/MarkContainer"]
+margin_left = 85.0
+margin_top = 42.0
+margin_right = 166.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="Panel" type="Panel" parent="Game/Main/Button3"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Button3/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button4" type="Button" parent="Game/Main"]
+margin_left = 513.0
+margin_right = 680.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 18 )
+custom_styles/pressed = ExtResource( 18 )
+custom_styles/normal = ExtResource( 18 )
+
+[node name="MarkContainer" type="GridContainer" parent="Game/Main/Button4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bombMark" type="TextureRect" parent="Game/Main/Button4/MarkContainer"]
+margin_right = 81.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="oneMark" type="TextureRect" parent="Game/Main/Button4/MarkContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="twoMark" type="TextureRect" parent="Game/Main/Button4/MarkContainer"]
+margin_top = 42.0
+margin_right = 81.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="threeMark" type="TextureRect" parent="Game/Main/Button4/MarkContainer"]
+margin_left = 85.0
+margin_top = 42.0
+margin_right = 166.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="Panel" type="Panel" parent="Game/Main/Button4"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Button4/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button5" type="Button" parent="Game/Main"]
+margin_left = 684.0
+margin_right = 851.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 19 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/normal = ExtResource( 19 )
+
+[node name="MarkContainer" type="GridContainer" parent="Game/Main/Button5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bombMark" type="TextureRect" parent="Game/Main/Button5/MarkContainer"]
+margin_right = 81.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="oneMark" type="TextureRect" parent="Game/Main/Button5/MarkContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="twoMark" type="TextureRect" parent="Game/Main/Button5/MarkContainer"]
+margin_top = 42.0
+margin_right = 81.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="threeMark" type="TextureRect" parent="Game/Main/Button5/MarkContainer"]
+margin_left = 85.0
+margin_top = 42.0
+margin_right = 166.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="Panel" type="Panel" parent="Game/Main/Button5"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Button5/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel1" type="Panel" parent="Game/Main"]
+margin_left = 855.0
+margin_right = 1022.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 17 )
+
+[node name="GridContainer" type="GridContainer" parent="Game/Main/Panel1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Points" type="Label" parent="Game/Main/Panel1/GridContainer"]
+margin_right = 167.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_styles/normal = ExtResource( 17 )
+custom_fonts/font = SubResource( 22 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1212"
+align = 1
+
+[node name="GridContainer" type="GridContainer" parent="Game/Main/Panel1/GridContainer"]
+margin_top = 45.0
+margin_right = 167.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 1
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Panel1/GridContainer/GridContainer"]
+margin_right = 81.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="BombQnt" type="Label" parent="Game/Main/Panel1/GridContainer/GridContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 23 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "12"
+align = 1
+
+[node name="Button6" type="Button" parent="Game/Main"]
+margin_top = 84.0
+margin_right = 167.0
+margin_bottom = 164.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 18 )
+custom_styles/pressed = ExtResource( 18 )
+custom_styles/normal = ExtResource( 18 )
+
+[node name="MarkContainer" type="GridContainer" parent="Game/Main/Button6"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bombMark" type="TextureRect" parent="Game/Main/Button6/MarkContainer"]
+margin_right = 81.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="oneMark" type="TextureRect" parent="Game/Main/Button6/MarkContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="twoMark" type="TextureRect" parent="Game/Main/Button6/MarkContainer"]
+margin_top = 42.0
+margin_right = 81.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="threeMark" type="TextureRect" parent="Game/Main/Button6/MarkContainer"]
+margin_left = 85.0
+margin_top = 42.0
+margin_right = 166.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="Panel" type="Panel" parent="Game/Main/Button6"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Button6/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button7" type="Button" parent="Game/Main"]
+margin_left = 171.0
+margin_top = 84.0
+margin_right = 338.0
+margin_bottom = 164.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 19 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/normal = ExtResource( 19 )
+
+[node name="MarkContainer" type="GridContainer" parent="Game/Main/Button7"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bombMark" type="TextureRect" parent="Game/Main/Button7/MarkContainer"]
+margin_right = 81.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="oneMark" type="TextureRect" parent="Game/Main/Button7/MarkContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="twoMark" type="TextureRect" parent="Game/Main/Button7/MarkContainer"]
+margin_top = 42.0
+margin_right = 81.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="threeMark" type="TextureRect" parent="Game/Main/Button7/MarkContainer"]
+margin_left = 85.0
+margin_top = 42.0
+margin_right = 166.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="Panel" type="Panel" parent="Game/Main/Button7"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Button7/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button8" type="Button" parent="Game/Main"]
+margin_left = 342.0
+margin_top = 84.0
+margin_right = 509.0
+margin_bottom = 164.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 18 )
+custom_styles/pressed = ExtResource( 18 )
+custom_styles/normal = ExtResource( 18 )
+
+[node name="MarkContainer" type="GridContainer" parent="Game/Main/Button8"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bombMark" type="TextureRect" parent="Game/Main/Button8/MarkContainer"]
+margin_right = 81.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="oneMark" type="TextureRect" parent="Game/Main/Button8/MarkContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="twoMark" type="TextureRect" parent="Game/Main/Button8/MarkContainer"]
+margin_top = 42.0
+margin_right = 81.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="threeMark" type="TextureRect" parent="Game/Main/Button8/MarkContainer"]
+margin_left = 85.0
+margin_top = 42.0
+margin_right = 166.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Game/Main/Button8"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Button8/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button9" type="Button" parent="Game/Main"]
+margin_left = 513.0
+margin_top = 84.0
+margin_right = 680.0
+margin_bottom = 164.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 19 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/normal = ExtResource( 19 )
+
+[node name="MarkContainer" type="GridContainer" parent="Game/Main/Button9"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bombMark" type="TextureRect" parent="Game/Main/Button9/MarkContainer"]
+margin_right = 81.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="oneMark" type="TextureRect" parent="Game/Main/Button9/MarkContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="twoMark" type="TextureRect" parent="Game/Main/Button9/MarkContainer"]
+margin_top = 42.0
+margin_right = 81.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="threeMark" type="TextureRect" parent="Game/Main/Button9/MarkContainer"]
+margin_left = 85.0
+margin_top = 42.0
+margin_right = 166.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="Panel" type="Panel" parent="Game/Main/Button9"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Button9/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button10" type="Button" parent="Game/Main"]
+margin_left = 684.0
+margin_top = 84.0
+margin_right = 851.0
+margin_bottom = 164.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 18 )
+custom_styles/pressed = ExtResource( 18 )
+custom_styles/normal = ExtResource( 18 )
+
+[node name="MarkContainer" type="GridContainer" parent="Game/Main/Button10"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bombMark" type="TextureRect" parent="Game/Main/Button10/MarkContainer"]
+margin_right = 81.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="oneMark" type="TextureRect" parent="Game/Main/Button10/MarkContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="twoMark" type="TextureRect" parent="Game/Main/Button10/MarkContainer"]
+margin_top = 42.0
+margin_right = 81.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="threeMark" type="TextureRect" parent="Game/Main/Button10/MarkContainer"]
+margin_left = 85.0
+margin_top = 42.0
+margin_right = 166.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="Panel" type="Panel" parent="Game/Main/Button10"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Button10/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="Game/Main"]
+margin_left = 855.0
+margin_top = 84.0
+margin_right = 1022.0
+margin_bottom = 164.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 17 )
+
+[node name="GridContainer" type="GridContainer" parent="Game/Main/Panel2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Points" type="Label" parent="Game/Main/Panel2/GridContainer"]
+margin_right = 167.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_styles/normal = ExtResource( 17 )
+custom_fonts/font = SubResource( 22 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1212"
+align = 1
+
+[node name="GridContainer" type="GridContainer" parent="Game/Main/Panel2/GridContainer"]
+margin_top = 45.0
+margin_right = 167.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 1
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Panel2/GridContainer/GridContainer"]
+margin_right = 81.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="BombQnt" type="Label" parent="Game/Main/Panel2/GridContainer/GridContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 23 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "12"
+align = 1
+
+[node name="Button11" type="Button" parent="Game/Main"]
+margin_top = 168.0
+margin_right = 167.0
+margin_bottom = 248.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 19 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/normal = ExtResource( 19 )
+
+[node name="MarkContainer" type="GridContainer" parent="Game/Main/Button11"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bombMark" type="TextureRect" parent="Game/Main/Button11/MarkContainer"]
+margin_right = 81.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="oneMark" type="TextureRect" parent="Game/Main/Button11/MarkContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="twoMark" type="TextureRect" parent="Game/Main/Button11/MarkContainer"]
+margin_top = 42.0
+margin_right = 81.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="threeMark" type="TextureRect" parent="Game/Main/Button11/MarkContainer"]
+margin_left = 85.0
+margin_top = 42.0
+margin_right = 166.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="Panel" type="Panel" parent="Game/Main/Button11"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Button11/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button12" type="Button" parent="Game/Main"]
+margin_left = 171.0
+margin_top = 168.0
+margin_right = 338.0
+margin_bottom = 248.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 18 )
+custom_styles/pressed = ExtResource( 18 )
+custom_styles/normal = ExtResource( 18 )
+
+[node name="MarkContainer" type="GridContainer" parent="Game/Main/Button12"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bombMark" type="TextureRect" parent="Game/Main/Button12/MarkContainer"]
+margin_right = 81.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="oneMark" type="TextureRect" parent="Game/Main/Button12/MarkContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="twoMark" type="TextureRect" parent="Game/Main/Button12/MarkContainer"]
+margin_top = 42.0
+margin_right = 81.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="threeMark" type="TextureRect" parent="Game/Main/Button12/MarkContainer"]
+margin_left = 85.0
+margin_top = 42.0
+margin_right = 166.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="Panel" type="Panel" parent="Game/Main/Button12"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Button12/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button13" type="Button" parent="Game/Main"]
+margin_left = 342.0
+margin_top = 168.0
+margin_right = 509.0
+margin_bottom = 248.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 19 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/normal = ExtResource( 19 )
+
+[node name="MarkContainer" type="GridContainer" parent="Game/Main/Button13"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bombMark" type="TextureRect" parent="Game/Main/Button13/MarkContainer"]
+margin_right = 81.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="oneMark" type="TextureRect" parent="Game/Main/Button13/MarkContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="twoMark" type="TextureRect" parent="Game/Main/Button13/MarkContainer"]
+margin_top = 42.0
+margin_right = 81.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="threeMark" type="TextureRect" parent="Game/Main/Button13/MarkContainer"]
+margin_left = 85.0
+margin_top = 42.0
+margin_right = 166.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="Panel" type="Panel" parent="Game/Main/Button13"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Button13/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button14" type="Button" parent="Game/Main"]
+margin_left = 513.0
+margin_top = 168.0
+margin_right = 680.0
+margin_bottom = 248.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 18 )
+custom_styles/pressed = ExtResource( 18 )
+custom_styles/normal = ExtResource( 18 )
+
+[node name="MarkContainer" type="GridContainer" parent="Game/Main/Button14"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bombMark" type="TextureRect" parent="Game/Main/Button14/MarkContainer"]
+margin_right = 81.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="oneMark" type="TextureRect" parent="Game/Main/Button14/MarkContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="twoMark" type="TextureRect" parent="Game/Main/Button14/MarkContainer"]
+margin_top = 42.0
+margin_right = 81.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="threeMark" type="TextureRect" parent="Game/Main/Button14/MarkContainer"]
+margin_left = 85.0
+margin_top = 42.0
+margin_right = 166.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Game/Main/Button14"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Button14/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button15" type="Button" parent="Game/Main"]
+margin_left = 684.0
+margin_top = 168.0
+margin_right = 851.0
+margin_bottom = 248.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 19 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/normal = ExtResource( 19 )
+
+[node name="MarkContainer" type="GridContainer" parent="Game/Main/Button15"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bombMark" type="TextureRect" parent="Game/Main/Button15/MarkContainer"]
+margin_right = 81.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="oneMark" type="TextureRect" parent="Game/Main/Button15/MarkContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="twoMark" type="TextureRect" parent="Game/Main/Button15/MarkContainer"]
+margin_top = 42.0
+margin_right = 81.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="threeMark" type="TextureRect" parent="Game/Main/Button15/MarkContainer"]
+margin_left = 85.0
+margin_top = 42.0
+margin_right = 166.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="Panel" type="Panel" parent="Game/Main/Button15"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Button15/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel3" type="Panel" parent="Game/Main"]
+margin_left = 855.0
+margin_top = 168.0
+margin_right = 1022.0
+margin_bottom = 248.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 17 )
+
+[node name="GridContainer" type="GridContainer" parent="Game/Main/Panel3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Points" type="Label" parent="Game/Main/Panel3/GridContainer"]
+margin_right = 167.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_styles/normal = ExtResource( 17 )
+custom_fonts/font = SubResource( 22 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1212"
+align = 1
+
+[node name="GridContainer" type="GridContainer" parent="Game/Main/Panel3/GridContainer"]
+margin_top = 45.0
+margin_right = 167.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 1
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Panel3/GridContainer/GridContainer"]
+margin_right = 81.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="BombQnt" type="Label" parent="Game/Main/Panel3/GridContainer/GridContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 23 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "12"
+align = 1
+
+[node name="Button16" type="Button" parent="Game/Main"]
+margin_top = 252.0
+margin_right = 167.0
+margin_bottom = 332.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 18 )
+custom_styles/pressed = ExtResource( 18 )
+custom_styles/normal = ExtResource( 18 )
+
+[node name="MarkContainer" type="GridContainer" parent="Game/Main/Button16"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bombMark" type="TextureRect" parent="Game/Main/Button16/MarkContainer"]
+margin_right = 81.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="oneMark" type="TextureRect" parent="Game/Main/Button16/MarkContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="twoMark" type="TextureRect" parent="Game/Main/Button16/MarkContainer"]
+margin_top = 42.0
+margin_right = 81.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="threeMark" type="TextureRect" parent="Game/Main/Button16/MarkContainer"]
+margin_left = 85.0
+margin_top = 42.0
+margin_right = 166.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="Panel" type="Panel" parent="Game/Main/Button16"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Button16/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button17" type="Button" parent="Game/Main"]
+margin_left = 171.0
+margin_top = 252.0
+margin_right = 338.0
+margin_bottom = 332.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 19 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/normal = ExtResource( 19 )
+
+[node name="MarkContainer" type="GridContainer" parent="Game/Main/Button17"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bombMark" type="TextureRect" parent="Game/Main/Button17/MarkContainer"]
+margin_right = 81.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="oneMark" type="TextureRect" parent="Game/Main/Button17/MarkContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="twoMark" type="TextureRect" parent="Game/Main/Button17/MarkContainer"]
+margin_top = 42.0
+margin_right = 81.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="threeMark" type="TextureRect" parent="Game/Main/Button17/MarkContainer"]
+margin_left = 85.0
+margin_top = 42.0
+margin_right = 166.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="Panel" type="Panel" parent="Game/Main/Button17"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Button17/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button18" type="Button" parent="Game/Main"]
+margin_left = 342.0
+margin_top = 252.0
+margin_right = 509.0
+margin_bottom = 332.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 18 )
+custom_styles/pressed = ExtResource( 18 )
+custom_styles/normal = ExtResource( 18 )
+
+[node name="MarkContainer" type="GridContainer" parent="Game/Main/Button18"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bombMark" type="TextureRect" parent="Game/Main/Button18/MarkContainer"]
+margin_right = 81.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="oneMark" type="TextureRect" parent="Game/Main/Button18/MarkContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="twoMark" type="TextureRect" parent="Game/Main/Button18/MarkContainer"]
+margin_top = 42.0
+margin_right = 81.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="threeMark" type="TextureRect" parent="Game/Main/Button18/MarkContainer"]
+margin_left = 85.0
+margin_top = 42.0
+margin_right = 166.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Game/Main/Button18"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Button18/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button19" type="Button" parent="Game/Main"]
+margin_left = 513.0
+margin_top = 252.0
+margin_right = 680.0
+margin_bottom = 332.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 19 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/normal = ExtResource( 19 )
+
+[node name="MarkContainer" type="GridContainer" parent="Game/Main/Button19"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bombMark" type="TextureRect" parent="Game/Main/Button19/MarkContainer"]
+margin_right = 81.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="oneMark" type="TextureRect" parent="Game/Main/Button19/MarkContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="twoMark" type="TextureRect" parent="Game/Main/Button19/MarkContainer"]
+margin_top = 42.0
+margin_right = 81.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="threeMark" type="TextureRect" parent="Game/Main/Button19/MarkContainer"]
+margin_left = 85.0
+margin_top = 42.0
+margin_right = 166.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="Panel" type="Panel" parent="Game/Main/Button19"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Button19/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button20" type="Button" parent="Game/Main"]
+margin_left = 684.0
+margin_top = 252.0
+margin_right = 851.0
+margin_bottom = 332.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 18 )
+custom_styles/pressed = ExtResource( 18 )
+custom_styles/normal = ExtResource( 18 )
+
+[node name="MarkContainer" type="GridContainer" parent="Game/Main/Button20"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bombMark" type="TextureRect" parent="Game/Main/Button20/MarkContainer"]
+margin_right = 81.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="oneMark" type="TextureRect" parent="Game/Main/Button20/MarkContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="twoMark" type="TextureRect" parent="Game/Main/Button20/MarkContainer"]
+margin_top = 42.0
+margin_right = 81.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="threeMark" type="TextureRect" parent="Game/Main/Button20/MarkContainer"]
+margin_left = 85.0
+margin_top = 42.0
+margin_right = 166.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="Panel" type="Panel" parent="Game/Main/Button20"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Button20/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel4" type="Panel" parent="Game/Main"]
+margin_left = 855.0
+margin_top = 252.0
+margin_right = 1022.0
+margin_bottom = 332.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 17 )
+
+[node name="GridContainer" type="GridContainer" parent="Game/Main/Panel4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Points" type="Label" parent="Game/Main/Panel4/GridContainer"]
+margin_right = 167.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_styles/normal = ExtResource( 17 )
+custom_fonts/font = SubResource( 22 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1212"
+align = 1
+
+[node name="GridContainer" type="GridContainer" parent="Game/Main/Panel4/GridContainer"]
+margin_top = 45.0
+margin_right = 167.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 1
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Panel4/GridContainer/GridContainer"]
+margin_right = 81.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="BombQnt" type="Label" parent="Game/Main/Panel4/GridContainer/GridContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 23 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "12"
+align = 1
+
+[node name="Button21" type="Button" parent="Game/Main"]
+margin_top = 336.0
+margin_right = 167.0
+margin_bottom = 416.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 19 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/normal = ExtResource( 19 )
+
+[node name="MarkContainer" type="GridContainer" parent="Game/Main/Button21"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bombMark" type="TextureRect" parent="Game/Main/Button21/MarkContainer"]
+margin_right = 81.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="oneMark" type="TextureRect" parent="Game/Main/Button21/MarkContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="twoMark" type="TextureRect" parent="Game/Main/Button21/MarkContainer"]
+margin_top = 42.0
+margin_right = 81.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="threeMark" type="TextureRect" parent="Game/Main/Button21/MarkContainer"]
+margin_left = 85.0
+margin_top = 42.0
+margin_right = 166.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="Panel" type="Panel" parent="Game/Main/Button21"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Button21/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button22" type="Button" parent="Game/Main"]
+margin_left = 171.0
+margin_top = 336.0
+margin_right = 338.0
+margin_bottom = 416.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 18 )
+custom_styles/pressed = ExtResource( 18 )
+custom_styles/normal = ExtResource( 18 )
+
+[node name="MarkContainer" type="GridContainer" parent="Game/Main/Button22"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bombMark" type="TextureRect" parent="Game/Main/Button22/MarkContainer"]
+margin_right = 81.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="oneMark" type="TextureRect" parent="Game/Main/Button22/MarkContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="twoMark" type="TextureRect" parent="Game/Main/Button22/MarkContainer"]
+margin_top = 42.0
+margin_right = 81.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="threeMark" type="TextureRect" parent="Game/Main/Button22/MarkContainer"]
+margin_left = 85.0
+margin_top = 42.0
+margin_right = 166.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="Panel" type="Panel" parent="Game/Main/Button22"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Button22/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button23" type="Button" parent="Game/Main"]
+margin_left = 342.0
+margin_top = 336.0
+margin_right = 509.0
+margin_bottom = 416.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 19 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/normal = ExtResource( 19 )
+
+[node name="MarkContainer" type="GridContainer" parent="Game/Main/Button23"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bombMark" type="TextureRect" parent="Game/Main/Button23/MarkContainer"]
+margin_right = 81.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="oneMark" type="TextureRect" parent="Game/Main/Button23/MarkContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="twoMark" type="TextureRect" parent="Game/Main/Button23/MarkContainer"]
+margin_top = 42.0
+margin_right = 81.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="threeMark" type="TextureRect" parent="Game/Main/Button23/MarkContainer"]
+margin_left = 85.0
+margin_top = 42.0
+margin_right = 166.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="Panel" type="Panel" parent="Game/Main/Button23"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Button23/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button24" type="Button" parent="Game/Main"]
+margin_left = 513.0
+margin_top = 336.0
+margin_right = 680.0
+margin_bottom = 416.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 18 )
+custom_styles/pressed = ExtResource( 18 )
+custom_styles/normal = ExtResource( 18 )
+
+[node name="MarkContainer" type="GridContainer" parent="Game/Main/Button24"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bombMark" type="TextureRect" parent="Game/Main/Button24/MarkContainer"]
+margin_right = 81.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="oneMark" type="TextureRect" parent="Game/Main/Button24/MarkContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="twoMark" type="TextureRect" parent="Game/Main/Button24/MarkContainer"]
+margin_top = 42.0
+margin_right = 81.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="threeMark" type="TextureRect" parent="Game/Main/Button24/MarkContainer"]
+margin_left = 85.0
+margin_top = 42.0
+margin_right = 166.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Game/Main/Button24"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Button24/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button25" type="Button" parent="Game/Main"]
+margin_left = 684.0
+margin_top = 336.0
+margin_right = 851.0
+margin_bottom = 416.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 19 )
+custom_styles/pressed = ExtResource( 19 )
+custom_styles/normal = ExtResource( 19 )
+
+[node name="MarkContainer" type="GridContainer" parent="Game/Main/Button25"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bombMark" type="TextureRect" parent="Game/Main/Button25/MarkContainer"]
+margin_right = 81.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="oneMark" type="TextureRect" parent="Game/Main/Button25/MarkContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 38.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="twoMark" type="TextureRect" parent="Game/Main/Button25/MarkContainer"]
+margin_top = 42.0
+margin_right = 81.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="threeMark" type="TextureRect" parent="Game/Main/Button25/MarkContainer"]
+margin_left = 85.0
+margin_top = 42.0
+margin_right = 166.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 6
+
+[node name="Panel" type="Panel" parent="Game/Main/Button25"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Button25/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel5" type="Panel" parent="Game/Main"]
+margin_left = 855.0
+margin_top = 336.0
+margin_right = 1022.0
+margin_bottom = 416.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 17 )
+
+[node name="GridContainer" type="GridContainer" parent="Game/Main/Panel5"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Points" type="Label" parent="Game/Main/Panel5/GridContainer"]
+margin_right = 167.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_styles/normal = ExtResource( 17 )
+custom_fonts/font = SubResource( 22 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1212"
+align = 1
+
+[node name="GridContainer" type="GridContainer" parent="Game/Main/Panel5/GridContainer"]
+margin_top = 45.0
+margin_right = 167.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 1
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Panel5/GridContainer/GridContainer"]
+margin_right = 81.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="BombQnt" type="Label" parent="Game/Main/Panel5/GridContainer/GridContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 23 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "12"
+align = 1
+
+[node name="Panel6" type="Panel" parent="Game/Main"]
+margin_top = 420.0
+margin_right = 167.0
+margin_bottom = 500.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 17 )
+
+[node name="GridContainer" type="GridContainer" parent="Game/Main/Panel6"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Points" type="Label" parent="Game/Main/Panel6/GridContainer"]
+margin_right = 167.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_styles/normal = ExtResource( 17 )
+custom_fonts/font = SubResource( 22 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1212"
+align = 1
+
+[node name="GridContainer" type="GridContainer" parent="Game/Main/Panel6/GridContainer"]
+margin_top = 45.0
+margin_right = 167.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 1
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Panel6/GridContainer/GridContainer"]
+margin_right = 81.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="BombQnt" type="Label" parent="Game/Main/Panel6/GridContainer/GridContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 23 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "12"
+align = 1
+
+[node name="Panel7" type="Panel" parent="Game/Main"]
+margin_left = 171.0
+margin_top = 420.0
+margin_right = 338.0
+margin_bottom = 500.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 17 )
+
+[node name="GridContainer" type="GridContainer" parent="Game/Main/Panel7"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Points" type="Label" parent="Game/Main/Panel7/GridContainer"]
+margin_right = 167.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_styles/normal = ExtResource( 17 )
+custom_fonts/font = SubResource( 22 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1212"
+align = 1
+
+[node name="GridContainer" type="GridContainer" parent="Game/Main/Panel7/GridContainer"]
+margin_top = 45.0
+margin_right = 167.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 1
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Panel7/GridContainer/GridContainer"]
+margin_right = 81.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="BombQnt" type="Label" parent="Game/Main/Panel7/GridContainer/GridContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 23 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "12"
+align = 1
+
+[node name="Panel8" type="Panel" parent="Game/Main"]
+margin_left = 342.0
+margin_top = 420.0
+margin_right = 509.0
+margin_bottom = 500.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 17 )
+
+[node name="GridContainer" type="GridContainer" parent="Game/Main/Panel8"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Points" type="Label" parent="Game/Main/Panel8/GridContainer"]
+margin_right = 167.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_styles/normal = ExtResource( 17 )
+custom_fonts/font = SubResource( 22 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1212"
+align = 1
+
+[node name="GridContainer" type="GridContainer" parent="Game/Main/Panel8/GridContainer"]
+margin_top = 45.0
+margin_right = 167.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 1
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Panel8/GridContainer/GridContainer"]
+margin_right = 81.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="BombQnt" type="Label" parent="Game/Main/Panel8/GridContainer/GridContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 23 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "12"
+align = 1
+
+[node name="Panel9" type="Panel" parent="Game/Main"]
+margin_left = 513.0
+margin_top = 420.0
+margin_right = 680.0
+margin_bottom = 500.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 17 )
+
+[node name="GridContainer" type="GridContainer" parent="Game/Main/Panel9"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Points" type="Label" parent="Game/Main/Panel9/GridContainer"]
+margin_right = 167.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_styles/normal = ExtResource( 17 )
+custom_fonts/font = SubResource( 22 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1212"
+align = 1
+
+[node name="GridContainer" type="GridContainer" parent="Game/Main/Panel9/GridContainer"]
+margin_top = 45.0
+margin_right = 167.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 1
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Panel9/GridContainer/GridContainer"]
+margin_right = 81.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="BombQnt" type="Label" parent="Game/Main/Panel9/GridContainer/GridContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 23 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "12"
+align = 1
+
+[node name="Panel10" type="Panel" parent="Game/Main"]
+margin_left = 684.0
+margin_top = 420.0
+margin_right = 851.0
+margin_bottom = 500.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 17 )
+
+[node name="GridContainer" type="GridContainer" parent="Game/Main/Panel10"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Points" type="Label" parent="Game/Main/Panel10/GridContainer"]
+margin_right = 167.0
+margin_bottom = 41.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_styles/normal = ExtResource( 17 )
+custom_fonts/font = SubResource( 22 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1212"
+align = 1
+
+[node name="GridContainer" type="GridContainer" parent="Game/Main/Panel10/GridContainer"]
+margin_top = 45.0
+margin_right = 167.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 1
+columns = 2
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Panel10/GridContainer/GridContainer"]
+margin_right = 81.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 2 )
+stretch_mode = 4
+
+[node name="BombQnt" type="Label" parent="Game/Main/Panel10/GridContainer/GridContainer"]
+margin_left = 85.0
+margin_right = 166.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 7
+custom_fonts/font = SubResource( 23 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "12"
+align = 1
+
+[node name="Mark" type="Button" parent="Game/Main"]
+margin_left = 855.0
+margin_top = 420.0
+margin_right = 1022.0
+margin_bottom = 500.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 15 )
+custom_styles/pressed = ExtResource( 16 )
+custom_styles/normal = ExtResource( 14 )
+
+[node name="TextureRect" type="TextureRect" parent="Game/Main/Mark"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 10 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarkWindow" type="Panel" parent="Game"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 24 )
+script = ExtResource( 24 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="MWindow" type="Panel" parent="Game/MarkWindow"]
+anchor_left = 0.2
+anchor_top = 0.1
+anchor_right = 0.8
+anchor_bottom = 0.9
+custom_styles/panel = SubResource( 25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="Game/MarkWindow/MWindow"]
+anchor_left = 0.02
+anchor_top = 0.02
+anchor_right = 0.98
+anchor_bottom = 0.98
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AuxPanel" type="Panel" parent="Game/MarkWindow/MWindow/GridContainer"]
+margin_right = 292.0
+margin_bottom = 48.0
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 26 )
+
+[node name="Close" type="Button" parent="Game/MarkWindow/MWindow/GridContainer"]
+margin_left = 536.0
+margin_right = 588.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 52, 48 )
+size_flags_horizontal = 8
+custom_styles/hover = ExtResource( 15 )
+custom_styles/pressed = ExtResource( 16 )
+custom_styles/normal = ExtResource( 14 )
+align = 2
+
+[node name="TextureRect" type="TextureRect" parent="Game/MarkWindow/MWindow/GridContainer/Close"]
+anchor_left = 0.1
+anchor_top = 0.2
+anchor_right = 0.9
+anchor_bottom = 0.8
+texture = ExtResource( 8 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BombOpt" type="Button" parent="Game/MarkWindow/MWindow/GridContainer"]
+margin_top = 52.0
+margin_right = 292.0
+margin_bottom = 254.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 27 )
+custom_styles/pressed = SubResource( 28 )
+custom_styles/normal = SubResource( 29 )
+
+[node name="TextureRect" type="TextureRect" parent="Game/MarkWindow/MWindow/GridContainer/BombOpt"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 4 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OneOpt" type="Button" parent="Game/MarkWindow/MWindow/GridContainer"]
+margin_left = 296.0
+margin_top = 52.0
+margin_right = 588.0
+margin_bottom = 254.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 27 )
+custom_styles/pressed = SubResource( 28 )
+custom_styles/normal = SubResource( 29 )
+
+[node name="TextureRect" type="TextureRect" parent="Game/MarkWindow/MWindow/GridContainer/OneOpt"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 5 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TwoOpt" type="Button" parent="Game/MarkWindow/MWindow/GridContainer"]
+margin_top = 258.0
+margin_right = 292.0
+margin_bottom = 460.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 27 )
+custom_styles/pressed = SubResource( 28 )
+custom_styles/normal = SubResource( 29 )
+
+[node name="TextureRect" type="TextureRect" parent="Game/MarkWindow/MWindow/GridContainer/TwoOpt"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 7 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ThreeOpt" type="Button" parent="Game/MarkWindow/MWindow/GridContainer"]
+margin_left = 296.0
+margin_top = 258.0
+margin_right = 588.0
+margin_bottom = 460.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = SubResource( 27 )
+custom_styles/pressed = SubResource( 28 )
+custom_styles/normal = SubResource( 29 )
+
+[node name="TextureRect" type="TextureRect" parent="Game/MarkWindow/MWindow/GridContainer/ThreeOpt"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+texture = ExtResource( 1 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+[connection signal="button_up" from="Menu/Main/Classic Mode" to="Menu/Main" method="_on_Classic_Mode_button_up"]
+[connection signal="button_up" from="Menu/Main/Timer Mode" to="Menu/Main" method="_on_Timer_Mode_button_up"]
+[connection signal="button_up" from="Menu/Main/Tutorial" to="Menu/Main" method="_on_Tutorial_button_up"]
+[connection signal="button_up" from="Menu/Tutorial/TWindow/GridContainer/Label/Close" to="Menu/Main" method="_on_Close_button_up"]
+[connection signal="button_up" from="Game/Top/Back" to="Game/Top/Back" method="_on_Back_button_up"]
+[connection signal="button_up" from="Game/Main/Button1" to="Game/Main" method="flip"]
+[connection signal="button_up" from="Game/Main/Button2" to="Game/Main" method="flip"]
+[connection signal="button_up" from="Game/Main/Button3" to="Game/Main" method="flip"]
+[connection signal="button_up" from="Game/Main/Button4" to="Game/Main" method="flip"]
+[connection signal="button_up" from="Game/Main/Button5" to="Game/Main" method="flip"]
+[connection signal="button_up" from="Game/Main/Button6" to="Game/Main" method="flip"]
+[connection signal="button_up" from="Game/Main/Button7" to="Game/Main" method="flip"]
+[connection signal="button_up" from="Game/Main/Button8" to="Game/Main" method="flip"]
+[connection signal="button_up" from="Game/Main/Button9" to="Game/Main" method="flip"]
+[connection signal="button_up" from="Game/Main/Button10" to="Game/Main" method="flip"]
+[connection signal="button_up" from="Game/Main/Button11" to="Game/Main" method="flip"]
+[connection signal="button_up" from="Game/Main/Button12" to="Game/Main" method="flip"]
+[connection signal="button_up" from="Game/Main/Button13" to="Game/Main" method="flip"]
+[connection signal="button_up" from="Game/Main/Button14" to="Game/Main" method="flip"]
+[connection signal="button_up" from="Game/Main/Button15" to="Game/Main" method="flip"]
+[connection signal="button_up" from="Game/Main/Button16" to="Game/Main" method="flip"]
+[connection signal="button_up" from="Game/Main/Button17" to="Game/Main" method="flip"]
+[connection signal="button_up" from="Game/Main/Button18" to="Game/Main" method="flip"]
+[connection signal="button_up" from="Game/Main/Button19" to="Game/Main" method="flip"]
+[connection signal="button_up" from="Game/Main/Button20" to="Game/Main" method="flip"]
+[connection signal="button_up" from="Game/Main/Button21" to="Game/Main" method="flip"]
+[connection signal="button_up" from="Game/Main/Button22" to="Game/Main" method="flip"]
+[connection signal="button_up" from="Game/Main/Button23" to="Game/Main" method="flip"]
+[connection signal="button_up" from="Game/Main/Button24" to="Game/Main" method="flip"]
+[connection signal="button_up" from="Game/Main/Button25" to="Game/Main" method="flip"]
+[connection signal="button_up" from="Game/Main/Mark" to="Game/Main" method="_on_Mark_button_up"]
+[connection signal="button_up" from="Game/MarkWindow/MWindow/GridContainer/Close" to="Game/MarkWindow" method="_on_Close_button_up"]
+[connection signal="button_up" from="Game/MarkWindow/MWindow/GridContainer/BombOpt" to="Game/MarkWindow" method="_on_BombOpt_button_up"]
+[connection signal="button_up" from="Game/MarkWindow/MWindow/GridContainer/OneOpt" to="Game/MarkWindow" method="_on_OneOpt_button_up"]
+[connection signal="button_up" from="Game/MarkWindow/MWindow/GridContainer/TwoOpt" to="Game/MarkWindow" method="_on_TwoOpt_button_up"]
+[connection signal="button_up" from="Game/MarkWindow/MWindow/GridContainer/ThreeOpt" to="Game/MarkWindow" method="_on_ThreeOpt_button_up"]
