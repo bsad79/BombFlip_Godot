@@ -3,9 +3,9 @@ extends Panel
 var markIcon
 var markBoxV = false
 var markType
+var table = ""
 
 func _ready():
-	markIcon = get_parent().get_node("Main/Mark/TextureRect")
 	pass
 
 
@@ -19,7 +19,7 @@ func textureReset():
 	pass
 	
 func mark(btn):
-	var markPlace = get_parent().get_node("Main/"+btn+"/MarkContainer")
+	var markPlace = get_parent().get_node(table+btn+"/MarkContainer")
 	if markType == 0:
 		if markPlace.get_child(0).texture == null:
 			markPlace.get_child(0).texture = load("res://Images/Icons/MarkBomb.png")
@@ -73,6 +73,8 @@ func _on_BombOpt_button_up():
 
 
 func _on_OneOpt_button_up():
+	print(markIcon)
+	print(table)
 	get_parent().get_node("MarkWindow").visible = false
 	if markBoxV == false:
 		markIcon.texture = load("res://Images/Numbers/Mark1.png")
