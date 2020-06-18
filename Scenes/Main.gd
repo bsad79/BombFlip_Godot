@@ -2,6 +2,7 @@ extends GridContainer
 
 var difficultLvl
 var grid
+var gameMode
 var cardsF = 0
 var score = 0
 var Zcount = 0
@@ -21,6 +22,10 @@ var btnSfx
 var btnMusic
 var sfxChannel
 var musicChannel
+
+
+#get_parent().get_node("Top/Placar")
+#get_parent().get_node("Top/Timer")
 
 func _ready():
 	sfxChannel = get_parent().get_parent().get_node("sfx")
@@ -267,8 +272,13 @@ func cardCheck():
 	pass
 
 
-func ScoreUpdate():
-	get_parent().get_node("Top/Placar_Timer").text = str(score)
+func ScoreUpdate(point):
+	if gameMode == "classic":
+		get_parent().get_node("Top/Score/Placar").text = str(score)
+		pass
+	else:
+		get_parent().get_node("Top/Score/Timer").add(point)
+		pass
 	if ThreeCount == 0 && TwoCount == 0:
 		difficultLvl += 1
 		difficultCheck()
@@ -278,6 +288,7 @@ func ScoreUpdate():
 
 
 func flip():
+	var point = 0
 	var btn = get_focus_owner()
 	var mark = btn.get_child(0)
 	var texture = btn.get_child(1).get_child(0).texture
@@ -288,6 +299,10 @@ func flip():
 		btn.get_child(1).visible = true
 		if texture == btn0:
 			sfx(texture)
+			if gameMode == "timer":
+				get_parent().get_node("Top/Score/Timer").sec = 31
+				get_parent().get_node("Top/Score/Timer").minu = 1
+				pass
 			score = 0
 			cardsF = 0
 			difficultLvl = 1
@@ -301,13 +316,16 @@ func flip():
 			cardsF += 1
 			if texture == btn1:
 				score += 1
+				point = 1
 				pass
 			elif texture == btn2:
 				score += 2
+				point = 2
 				TwoCount -= 1
 				pass
 			elif texture == btn3:
 				score += 3
+				point = 3
 				ThreeCount -= 1
 				pass
 			pass
@@ -315,23 +333,27 @@ func flip():
 			cardsF += 1
 			if texture == btn1:
 				score *= 1
+				point = 1
 				pass
 			elif texture == btn2:
 				score += 2
+				point = 2
 				TwoCount -= 1
 				pass
 			elif texture == btn3:
 				score += 3
+				point = 3
 				ThreeCount -= 1
 				pass
 			pass
 		sfxChannel.play()
-		ScoreUpdate()
+		ScoreUpdate(point)
 		pass
 	pass
 
 
 func valueClear():
+	gameMode = get_parent().get_parent().get_node(".").gameMode
 	rowCount = 0
 	colCount = 1
 	Zcount = 0
@@ -339,6 +361,8 @@ func valueClear():
 	TwoCount = 0
 	ThreeCount = 0
 	sum = 0
+	score = 0
+	get_parent().get_node("Top/Score/Placar").text = str(0)
 	var Max = (grid-1)*(grid-1)
 	for n in range(1,Max+1):
 		var btn = get_node("Button"+str(n))
