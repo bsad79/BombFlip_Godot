@@ -2,6 +2,7 @@ extends GridContainer
 
 func _ready():
 	get_parent().get_node("Tutorial").visible = false
+	get_parent().get_parent().get_node("AnimBack").visible = false
 	pass
 
 

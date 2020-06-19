@@ -34,7 +34,7 @@ func _ready():
 		#musicChannel.stream = load("res://Sounds/Explosion.wav")
 		pass
 	get_node("MarkWindow").visible = false
-	difficultLvl = 1
+	difficultLvl = 7
 	difficultCheck()
 	valueSet()
 	pass
@@ -82,6 +82,7 @@ func sfx(type):
 			sfxChannel.stream = load("res://Sounds/Flip.wav")
 			pass
 		pass
+	sfxChannel.play()
 	pass
 
 
@@ -343,9 +344,14 @@ func ScoreUpdate(point):
 		get_node("Top/Score/Timer").add(point)
 		pass
 	if ThreeCount == 0 && TwoCount == 0:
-		difficultLvl += 1
-		difficultCheck()
-		valueClear()
+		if gameMode == "timer":
+			get_node("Top/Score/Timer").addBonus(table)
+			get_node("Top/Score/Timer/Timer").paused = true
+			pass
+		yield(victory(), "completed")
+		if gameMode == "timer":
+			get_node("Top/Score/Timer/Timer").paused = false
+			pass
 		pass
 	pass
 
@@ -353,7 +359,6 @@ func ScoreUpdate(point):
 func flip():
 	var point = 0
 	var btn = get_focus_owner()
-	#var mark = btn.get_child(0)
 	var texture = btn.get_child(1).get_child(0).texture
 	if get_node("MarkWindow").markBoxV == true:
 		get_node("MarkWindow").mark(btn.get_name())
@@ -363,14 +368,13 @@ func flip():
 		if texture == btn0:
 			sfx(texture)
 			if gameMode == "timer":
-				get_node("Top/Score/Timer").sec = 31
-				get_node("Top/Score/Timer").minu = 1
+				get_node("Top/Score/Timer/Timer").paused = true
 				pass
-			score = 0
-			cardsF = 0
-			difficultLvl = 1
-			difficultCheck()
+			yield(defeat(), "completed")
 			valueClear()
+			if gameMode == "timer":
+				get_node("Top/Score/Timer/Timer").paused = false
+				pass
 			pass
 		else:
 			sfx(texture)
@@ -409,8 +413,33 @@ func flip():
 				ThreeCount -= 1
 				pass
 			pass
-		sfxChannel.play()
 		ScoreUpdate(point)
+		pass
+	pass
+
+
+func victory():
+	difficultLvl += 1
+	difficultCheck()
+	get_parent().get_node("AnimBack").visible = true
+	get_parent().get_node("AnimBack/VictoryPlay").play("Victory")
+	yield(get_tree().create_timer(1.5), "timeout")
+	get_parent().get_node("AnimBack").visible = false
+	valueClear()
+	pass
+	
+func defeat():
+	score = 0
+	cardsF = 0
+	difficultLvl = 1
+	difficultCheck()
+	get_parent().get_node("AnimBack").visible = true
+	get_parent().get_node("AnimBack/LostPlay").play("Lose")
+	yield(get_tree().create_timer(1.5), "timeout")
+	get_parent().get_node("AnimBack").visible = false
+	if gameMode == "timer":
+		get_node("Top/Score/Timer").sec = 30
+		get_node("Top/Score/Timer").minu = 1
 		pass
 	pass
 
