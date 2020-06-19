@@ -371,7 +371,6 @@ func flip():
 				get_node("Top/Score/Timer/Timer").paused = true
 				pass
 			yield(defeat(), "completed")
-			valueClear()
 			if gameMode == "timer":
 				get_node("Top/Score/Timer/Timer").paused = false
 				pass
@@ -432,7 +431,6 @@ func defeat():
 	score = 0
 	cardsF = 0
 	difficultLvl = 1
-	difficultCheck()
 	get_parent().get_node("AnimBack").visible = true
 	get_parent().get_node("AnimBack/LostPlay").play("Lose")
 	yield(get_tree().create_timer(1.5), "timeout")
@@ -441,6 +439,8 @@ func defeat():
 		get_node("Top/Score/Timer").sec = 30
 		get_node("Top/Score/Timer").minu = 1
 		pass
+	difficultCheck()
+	valueClear()
 	pass
 
 

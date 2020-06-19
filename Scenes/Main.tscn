@@ -73,7 +73,6 @@ bg_color = Color( 0.215686, 0.137255, 0.137255, 0 )
 
 [sub_resource type="DynamicFont" id=12]
 size = 30
-use_filter = true
 font_data = ExtResource( 6 )
 
 [sub_resource type="StyleBoxFlat" id=13]
@@ -118,12 +117,10 @@ bg_color = Color( 0.905882, 0.937255, 0.866667, 1 )
 
 [sub_resource type="DynamicFont" id=23]
 size = 25
-use_filter = true
 font_data = ExtResource( 6 )
 
 [sub_resource type="DynamicFont" id=24]
 size = 25
-use_filter = true
 font_data = ExtResource( 6 )
 
 [sub_resource type="StyleBoxFlat" id=25]
@@ -194,35 +191,34 @@ __meta__ = {
 
 [node name="Main" type="GridContainer" parent="Menu"]
 self_modulate = Color( 0.0470588, 0.552941, 0.227451, 1 )
-anchor_left = 0.3
+anchor_left = 0.2
 anchor_top = -0.0022673
-anchor_right = 0.7
+anchor_right = 0.8
 anchor_bottom = 0.997733
 custom_constants/vseparation = 16
 custom_constants/hseparation = 10
 script = ExtResource( 22 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="Logo" type="Panel" parent="Menu/Main"]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_right = 409.0
+margin_right = 614.0
 margin_bottom = 200.0
 rect_min_size = Vector2( 0, 200 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
 [node name="TextureRect" type="TextureRect" parent="Menu/Main/Logo"]
+anchor_top = 0.1
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 20.0
 texture = ExtResource( 3 )
+expand = true
 stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
@@ -230,7 +226,7 @@ __meta__ = {
 
 [node name="Classic Mode" type="Button" parent="Menu/Main"]
 margin_top = 221.0
-margin_right = 409.0
+margin_right = 614.0
 margin_bottom = 261.0
 rect_min_size = Vector2( 0, 40 )
 size_flags_horizontal = 3
@@ -246,6 +242,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 11 )
+expand = true
 stretch_mode = 4
 __meta__ = {
 "_edit_use_anchors_": true
@@ -253,7 +250,7 @@ __meta__ = {
 
 [node name="Timer Mode" type="Button" parent="Menu/Main"]
 margin_top = 287.0
-margin_right = 409.0
+margin_right = 614.0
 margin_bottom = 327.0
 rect_min_size = Vector2( 0, 40 )
 size_flags_horizontal = 3
@@ -266,6 +263,7 @@ custom_styles/normal = SubResource( 7 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 13 )
+expand = true
 stretch_mode = 4
 __meta__ = {
 "_edit_use_anchors_": false
@@ -273,7 +271,7 @@ __meta__ = {
 
 [node name="Tutorial" type="Button" parent="Menu/Main"]
 margin_top = 353.0
-margin_right = 409.0
+margin_right = 614.0
 margin_bottom = 393.0
 rect_min_size = Vector2( 0, 40 )
 size_flags_horizontal = 3
@@ -285,23 +283,29 @@ custom_styles/normal = SubResource( 10 )
 [node name="TextureRect" type="TextureRect" parent="Menu/Main/Tutorial"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource( 9 )
+expand = true
 stretch_mode = 4
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": true
 }
 
 [node name="Music" type="Panel" parent="Menu/Main"]
 margin_top = 414.0
-margin_right = 409.0
+margin_right = 614.0
 margin_bottom = 464.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = SubResource( 11 )
 
 [node name="Music" type="CheckBox" parent="Menu/Main/Music"]
-anchor_right = 1.0
+anchor_left = 0.5
+anchor_right = 0.5
 anchor_bottom = 1.0
+margin_left = -60.0
+margin_right = 60.0
 rect_min_size = Vector2( 0, 40 )
 size_flags_horizontal = 3
 size_flags_vertical = 2
@@ -314,15 +318,18 @@ __meta__ = {
 
 [node name="Sfx" type="Panel" parent="Menu/Main"]
 margin_top = 480.0
-margin_right = 409.0
+margin_right = 614.0
 margin_bottom = 530.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = SubResource( 11 )
 
 [node name="Sfx" type="CheckBox" parent="Menu/Main/Sfx"]
-anchor_right = 1.0
+anchor_left = 0.5
+anchor_right = 0.5
 anchor_bottom = 1.0
+margin_left = -114.5
+margin_right = 114.5
 rect_min_size = Vector2( 0, 40 )
 size_flags_horizontal = 3
 size_flags_vertical = 2
@@ -335,7 +342,7 @@ __meta__ = {
 
 [node name="Credits" type="Panel" parent="Menu/Main"]
 margin_top = 546.0
-margin_right = 409.0
+margin_right = 614.0
 margin_bottom = 596.0
 size_flags_vertical = 3
 custom_styles/panel = SubResource( 13 )
@@ -491,8 +498,10 @@ __meta__ = {
 anchor_top = 0.001
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_bottom = -6.10352e-05
 script = ExtResource( 32 )
 __meta__ = {
+"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
@@ -573,6 +582,7 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="Game/Top/Score/Timer"]
 
 [node name="5x5" type="GridContainer" parent="Game"]
+visible = false
 anchor_top = 0.1
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -2863,8 +2873,8 @@ __meta__ = {
 }
 
 [node name="Button1" type="Button" parent="Game/7x7"]
-margin_right = 128.0
-margin_bottom = 67.0
+margin_right = 56.0
+margin_bottom = 115.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 19 )
@@ -2880,33 +2890,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button1/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button1/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button1/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button1/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -2928,9 +2938,9 @@ __meta__ = {
 }
 
 [node name="Button2" type="Button" parent="Game/7x7"]
-margin_left = 128.0
-margin_right = 256.0
-margin_bottom = 67.0
+margin_left = 56.0
+margin_right = 112.0
+margin_bottom = 115.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 18 )
@@ -2946,33 +2956,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button2/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button2/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button2/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button2/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -2997,9 +3007,9 @@ __meta__ = {
 }
 
 [node name="Button3" type="Button" parent="Game/7x7"]
-margin_left = 256.0
-margin_right = 384.0
-margin_bottom = 67.0
+margin_left = 112.0
+margin_right = 168.0
+margin_bottom = 115.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 19 )
@@ -3015,33 +3025,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button3/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button3/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button3/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button3/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -3063,9 +3073,9 @@ __meta__ = {
 }
 
 [node name="Button4" type="Button" parent="Game/7x7"]
-margin_left = 384.0
-margin_right = 512.0
-margin_bottom = 67.0
+margin_left = 168.0
+margin_right = 224.0
+margin_bottom = 115.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 18 )
@@ -3081,33 +3091,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button4/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button4/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button4/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button4/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -3129,9 +3139,9 @@ __meta__ = {
 }
 
 [node name="Button5" type="Button" parent="Game/7x7"]
-margin_left = 512.0
-margin_right = 640.0
-margin_bottom = 67.0
+margin_left = 224.0
+margin_right = 280.0
+margin_bottom = 115.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 19 )
@@ -3147,33 +3157,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button5/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button5/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button5/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button5/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -3195,9 +3205,9 @@ __meta__ = {
 }
 
 [node name="Button6" type="Button" parent="Game/7x7"]
-margin_left = 640.0
-margin_right = 768.0
-margin_bottom = 67.0
+margin_left = 280.0
+margin_right = 336.0
+margin_bottom = 115.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 18 )
@@ -3213,33 +3223,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button6/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button6/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button6/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button6/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -3261,9 +3271,9 @@ __meta__ = {
 }
 
 [node name="Button7" type="Button" parent="Game/7x7"]
-margin_left = 768.0
-margin_right = 896.0
-margin_bottom = 67.0
+margin_left = 336.0
+margin_right = 392.0
+margin_bottom = 115.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 19 )
@@ -3279,33 +3289,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button7/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button7/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button7/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button7/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -3327,9 +3337,9 @@ __meta__ = {
 }
 
 [node name="Panel1" type="Panel" parent="Game/7x7"]
-margin_left = 896.0
-margin_right = 1024.0
-margin_bottom = 67.0
+margin_left = 392.0
+margin_right = 448.0
+margin_bottom = 115.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = ExtResource( 27 )
@@ -3345,8 +3355,8 @@ __meta__ = {
 }
 
 [node name="Points" type="Label" parent="Game/7x7/Panel1/GridContainer"]
-margin_right = 128.0
-margin_bottom = 33.0
+margin_right = 56.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/normal = ExtResource( 27 )
@@ -3356,26 +3366,26 @@ text = "1212"
 align = 1
 
 [node name="GridContainer" type="GridContainer" parent="Game/7x7/Panel1/GridContainer"]
-margin_top = 33.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_top = 57.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/hseparation = 0
 columns = 2
 
 [node name="TextureRect" type="TextureRect" parent="Game/7x7/Panel1/GridContainer/GridContainer"]
-margin_right = 64.0
-margin_bottom = 33.0
+margin_right = 28.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 2 )
 stretch_mode = 4
 
 [node name="BombQnt" type="Label" parent="Game/7x7/Panel1/GridContainer/GridContainer"]
-margin_left = 64.0
-margin_right = 128.0
-margin_bottom = 33.0
+margin_left = 28.0
+margin_right = 56.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
 custom_fonts/font = ExtResource( 31 )
@@ -3384,9 +3394,9 @@ text = "12"
 align = 1
 
 [node name="Button8" type="Button" parent="Game/7x7"]
-margin_top = 67.0
-margin_right = 128.0
-margin_bottom = 134.0
+margin_top = 115.0
+margin_right = 56.0
+margin_bottom = 230.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 18 )
@@ -3402,33 +3412,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button8/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button8/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button8/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button8/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -3453,10 +3463,10 @@ __meta__ = {
 }
 
 [node name="Button9" type="Button" parent="Game/7x7"]
-margin_left = 128.0
-margin_top = 67.0
-margin_right = 256.0
-margin_bottom = 134.0
+margin_left = 56.0
+margin_top = 115.0
+margin_right = 112.0
+margin_bottom = 230.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 19 )
@@ -3472,33 +3482,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button9/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button9/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button9/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button9/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -3520,10 +3530,10 @@ __meta__ = {
 }
 
 [node name="Button10" type="Button" parent="Game/7x7"]
-margin_left = 256.0
-margin_top = 67.0
-margin_right = 384.0
-margin_bottom = 134.0
+margin_left = 112.0
+margin_top = 115.0
+margin_right = 168.0
+margin_bottom = 230.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 18 )
@@ -3539,33 +3549,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button10/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button10/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button10/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button10/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -3587,10 +3597,10 @@ __meta__ = {
 }
 
 [node name="Button11" type="Button" parent="Game/7x7"]
-margin_left = 384.0
-margin_top = 67.0
-margin_right = 512.0
-margin_bottom = 134.0
+margin_left = 168.0
+margin_top = 115.0
+margin_right = 224.0
+margin_bottom = 230.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 19 )
@@ -3606,33 +3616,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button11/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button11/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button11/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button11/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -3654,10 +3664,10 @@ __meta__ = {
 }
 
 [node name="Button12" type="Button" parent="Game/7x7"]
-margin_left = 512.0
-margin_top = 67.0
-margin_right = 640.0
-margin_bottom = 134.0
+margin_left = 224.0
+margin_top = 115.0
+margin_right = 280.0
+margin_bottom = 230.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 18 )
@@ -3673,33 +3683,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button12/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button12/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button12/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button12/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -3721,10 +3731,10 @@ __meta__ = {
 }
 
 [node name="Button13" type="Button" parent="Game/7x7"]
-margin_left = 640.0
-margin_top = 67.0
-margin_right = 768.0
-margin_bottom = 134.0
+margin_left = 280.0
+margin_top = 115.0
+margin_right = 336.0
+margin_bottom = 230.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 19 )
@@ -3740,33 +3750,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button13/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button13/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button13/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button13/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -3788,10 +3798,10 @@ __meta__ = {
 }
 
 [node name="Button14" type="Button" parent="Game/7x7"]
-margin_left = 768.0
-margin_top = 67.0
-margin_right = 896.0
-margin_bottom = 134.0
+margin_left = 336.0
+margin_top = 115.0
+margin_right = 392.0
+margin_bottom = 230.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 18 )
@@ -3807,33 +3817,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button14/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button14/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button14/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button14/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -3858,10 +3868,10 @@ __meta__ = {
 }
 
 [node name="Panel2" type="Panel" parent="Game/7x7"]
-margin_left = 896.0
-margin_top = 67.0
-margin_right = 1024.0
-margin_bottom = 134.0
+margin_left = 392.0
+margin_top = 115.0
+margin_right = 448.0
+margin_bottom = 230.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = ExtResource( 27 )
@@ -3877,8 +3887,8 @@ __meta__ = {
 }
 
 [node name="Points" type="Label" parent="Game/7x7/Panel2/GridContainer"]
-margin_right = 128.0
-margin_bottom = 33.0
+margin_right = 56.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/normal = ExtResource( 27 )
@@ -3888,26 +3898,26 @@ text = "1212"
 align = 1
 
 [node name="GridContainer" type="GridContainer" parent="Game/7x7/Panel2/GridContainer"]
-margin_top = 33.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_top = 57.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/hseparation = 0
 columns = 2
 
 [node name="TextureRect" type="TextureRect" parent="Game/7x7/Panel2/GridContainer/GridContainer"]
-margin_right = 64.0
-margin_bottom = 33.0
+margin_right = 28.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 2 )
 stretch_mode = 4
 
 [node name="BombQnt" type="Label" parent="Game/7x7/Panel2/GridContainer/GridContainer"]
-margin_left = 64.0
-margin_right = 128.0
-margin_bottom = 33.0
+margin_left = 28.0
+margin_right = 56.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
 custom_fonts/font = ExtResource( 31 )
@@ -3916,9 +3926,9 @@ text = "12"
 align = 1
 
 [node name="Button15" type="Button" parent="Game/7x7"]
-margin_top = 134.0
-margin_right = 128.0
-margin_bottom = 201.0
+margin_top = 230.0
+margin_right = 56.0
+margin_bottom = 345.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 19 )
@@ -3934,33 +3944,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button15/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button15/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button15/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button15/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -3982,10 +3992,10 @@ __meta__ = {
 }
 
 [node name="Button16" type="Button" parent="Game/7x7"]
-margin_left = 128.0
-margin_top = 134.0
-margin_right = 256.0
-margin_bottom = 201.0
+margin_left = 56.0
+margin_top = 230.0
+margin_right = 112.0
+margin_bottom = 345.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 18 )
@@ -4001,33 +4011,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button16/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button16/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button16/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button16/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -4049,10 +4059,10 @@ __meta__ = {
 }
 
 [node name="Button17" type="Button" parent="Game/7x7"]
-margin_left = 256.0
-margin_top = 134.0
-margin_right = 384.0
-margin_bottom = 201.0
+margin_left = 112.0
+margin_top = 230.0
+margin_right = 168.0
+margin_bottom = 345.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 19 )
@@ -4068,33 +4078,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button17/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button17/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button17/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button17/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -4116,10 +4126,10 @@ __meta__ = {
 }
 
 [node name="Button18" type="Button" parent="Game/7x7"]
-margin_left = 384.0
-margin_top = 134.0
-margin_right = 512.0
-margin_bottom = 201.0
+margin_left = 168.0
+margin_top = 230.0
+margin_right = 224.0
+margin_bottom = 345.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 18 )
@@ -4135,33 +4145,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button18/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button18/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button18/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button18/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -4183,10 +4193,10 @@ __meta__ = {
 }
 
 [node name="Button19" type="Button" parent="Game/7x7"]
-margin_left = 512.0
-margin_top = 134.0
-margin_right = 640.0
-margin_bottom = 201.0
+margin_left = 224.0
+margin_top = 230.0
+margin_right = 280.0
+margin_bottom = 345.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 19 )
@@ -4202,33 +4212,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button19/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button19/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button19/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button19/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -4250,10 +4260,10 @@ __meta__ = {
 }
 
 [node name="Button20" type="Button" parent="Game/7x7"]
-margin_left = 640.0
-margin_top = 134.0
-margin_right = 768.0
-margin_bottom = 201.0
+margin_left = 280.0
+margin_top = 230.0
+margin_right = 336.0
+margin_bottom = 345.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 18 )
@@ -4269,33 +4279,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button20/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button20/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button20/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button20/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -4320,10 +4330,10 @@ __meta__ = {
 }
 
 [node name="Button21" type="Button" parent="Game/7x7"]
-margin_left = 768.0
-margin_top = 134.0
-margin_right = 896.0
-margin_bottom = 201.0
+margin_left = 336.0
+margin_top = 230.0
+margin_right = 392.0
+margin_bottom = 345.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 19 )
@@ -4339,33 +4349,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button21/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button21/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button21/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button21/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -4387,10 +4397,10 @@ __meta__ = {
 }
 
 [node name="Panel3" type="Panel" parent="Game/7x7"]
-margin_left = 896.0
-margin_top = 134.0
-margin_right = 1024.0
-margin_bottom = 201.0
+margin_left = 392.0
+margin_top = 230.0
+margin_right = 448.0
+margin_bottom = 345.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = ExtResource( 27 )
@@ -4406,8 +4416,8 @@ __meta__ = {
 }
 
 [node name="Points" type="Label" parent="Game/7x7/Panel3/GridContainer"]
-margin_right = 128.0
-margin_bottom = 33.0
+margin_right = 56.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/normal = ExtResource( 27 )
@@ -4417,26 +4427,26 @@ text = "1212"
 align = 1
 
 [node name="GridContainer" type="GridContainer" parent="Game/7x7/Panel3/GridContainer"]
-margin_top = 33.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_top = 57.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/hseparation = 0
 columns = 2
 
 [node name="TextureRect" type="TextureRect" parent="Game/7x7/Panel3/GridContainer/GridContainer"]
-margin_right = 64.0
-margin_bottom = 33.0
+margin_right = 28.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 2 )
 stretch_mode = 4
 
 [node name="BombQnt" type="Label" parent="Game/7x7/Panel3/GridContainer/GridContainer"]
-margin_left = 64.0
-margin_right = 128.0
-margin_bottom = 33.0
+margin_left = 28.0
+margin_right = 56.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
 custom_fonts/font = ExtResource( 31 )
@@ -4445,9 +4455,9 @@ text = "12"
 align = 1
 
 [node name="Button22" type="Button" parent="Game/7x7"]
-margin_top = 201.0
-margin_right = 128.0
-margin_bottom = 268.0
+margin_top = 345.0
+margin_right = 56.0
+margin_bottom = 460.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 18 )
@@ -4463,33 +4473,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button22/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button22/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button22/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button22/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -4514,10 +4524,10 @@ __meta__ = {
 }
 
 [node name="Button23" type="Button" parent="Game/7x7"]
-margin_left = 128.0
-margin_top = 201.0
-margin_right = 256.0
-margin_bottom = 268.0
+margin_left = 56.0
+margin_top = 345.0
+margin_right = 112.0
+margin_bottom = 460.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 19 )
@@ -4533,33 +4543,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button23/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button23/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button23/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button23/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -4581,10 +4591,10 @@ __meta__ = {
 }
 
 [node name="Button24" type="Button" parent="Game/7x7"]
-margin_left = 256.0
-margin_top = 201.0
-margin_right = 384.0
-margin_bottom = 268.0
+margin_left = 112.0
+margin_top = 345.0
+margin_right = 168.0
+margin_bottom = 460.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 18 )
@@ -4600,33 +4610,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button24/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button24/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button24/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button24/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -4648,10 +4658,10 @@ __meta__ = {
 }
 
 [node name="Button25" type="Button" parent="Game/7x7"]
-margin_left = 384.0
-margin_top = 201.0
-margin_right = 512.0
-margin_bottom = 268.0
+margin_left = 168.0
+margin_top = 345.0
+margin_right = 224.0
+margin_bottom = 460.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 19 )
@@ -4667,33 +4677,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button25/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button25/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button25/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button25/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -4715,10 +4725,10 @@ __meta__ = {
 }
 
 [node name="Button26" type="Button" parent="Game/7x7"]
-margin_left = 512.0
-margin_top = 201.0
-margin_right = 640.0
-margin_bottom = 268.0
+margin_left = 224.0
+margin_top = 345.0
+margin_right = 280.0
+margin_bottom = 460.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 18 )
@@ -4734,33 +4744,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button26/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button26/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button26/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button26/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -4782,10 +4792,10 @@ __meta__ = {
 }
 
 [node name="Button27" type="Button" parent="Game/7x7"]
-margin_left = 640.0
-margin_top = 201.0
-margin_right = 768.0
-margin_bottom = 268.0
+margin_left = 280.0
+margin_top = 345.0
+margin_right = 336.0
+margin_bottom = 460.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 19 )
@@ -4801,33 +4811,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button27/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button27/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button27/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button27/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -4849,10 +4859,10 @@ __meta__ = {
 }
 
 [node name="Button28" type="Button" parent="Game/7x7"]
-margin_left = 768.0
-margin_top = 201.0
-margin_right = 896.0
-margin_bottom = 268.0
+margin_left = 336.0
+margin_top = 345.0
+margin_right = 392.0
+margin_bottom = 460.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 18 )
@@ -4868,33 +4878,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button28/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button28/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button28/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button28/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -4919,10 +4929,10 @@ __meta__ = {
 }
 
 [node name="Panel4" type="Panel" parent="Game/7x7"]
-margin_left = 896.0
-margin_top = 201.0
-margin_right = 1024.0
-margin_bottom = 268.0
+margin_left = 392.0
+margin_top = 345.0
+margin_right = 448.0
+margin_bottom = 460.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = ExtResource( 27 )
@@ -4938,8 +4948,8 @@ __meta__ = {
 }
 
 [node name="Points" type="Label" parent="Game/7x7/Panel4/GridContainer"]
-margin_right = 128.0
-margin_bottom = 33.0
+margin_right = 56.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/normal = ExtResource( 27 )
@@ -4949,26 +4959,26 @@ text = "1212"
 align = 1
 
 [node name="GridContainer" type="GridContainer" parent="Game/7x7/Panel4/GridContainer"]
-margin_top = 33.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_top = 57.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/hseparation = 0
 columns = 2
 
 [node name="TextureRect" type="TextureRect" parent="Game/7x7/Panel4/GridContainer/GridContainer"]
-margin_right = 64.0
-margin_bottom = 33.0
+margin_right = 28.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 2 )
 stretch_mode = 4
 
 [node name="BombQnt" type="Label" parent="Game/7x7/Panel4/GridContainer/GridContainer"]
-margin_left = 64.0
-margin_right = 128.0
-margin_bottom = 33.0
+margin_left = 28.0
+margin_right = 56.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
 custom_fonts/font = ExtResource( 31 )
@@ -4977,9 +4987,9 @@ text = "12"
 align = 1
 
 [node name="Button29" type="Button" parent="Game/7x7"]
-margin_top = 268.0
-margin_right = 128.0
-margin_bottom = 335.0
+margin_top = 460.0
+margin_right = 56.0
+margin_bottom = 575.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 19 )
@@ -4995,33 +5005,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button29/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button29/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button29/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button29/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -5043,10 +5053,10 @@ __meta__ = {
 }
 
 [node name="Button30" type="Button" parent="Game/7x7"]
-margin_left = 128.0
-margin_top = 268.0
-margin_right = 256.0
-margin_bottom = 335.0
+margin_left = 56.0
+margin_top = 460.0
+margin_right = 112.0
+margin_bottom = 575.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 18 )
@@ -5062,33 +5072,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button30/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button30/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button30/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button30/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -5110,10 +5120,10 @@ __meta__ = {
 }
 
 [node name="Button31" type="Button" parent="Game/7x7"]
-margin_left = 256.0
-margin_top = 268.0
-margin_right = 384.0
-margin_bottom = 335.0
+margin_left = 112.0
+margin_top = 460.0
+margin_right = 168.0
+margin_bottom = 575.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 19 )
@@ -5129,33 +5139,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button31/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button31/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button31/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button31/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -5177,10 +5187,10 @@ __meta__ = {
 }
 
 [node name="Button32" type="Button" parent="Game/7x7"]
-margin_left = 384.0
-margin_top = 268.0
-margin_right = 512.0
-margin_bottom = 335.0
+margin_left = 168.0
+margin_top = 460.0
+margin_right = 224.0
+margin_bottom = 575.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 18 )
@@ -5196,33 +5206,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button32/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button32/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button32/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button32/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -5244,10 +5254,10 @@ __meta__ = {
 }
 
 [node name="Button33" type="Button" parent="Game/7x7"]
-margin_left = 512.0
-margin_top = 268.0
-margin_right = 640.0
-margin_bottom = 335.0
+margin_left = 224.0
+margin_top = 460.0
+margin_right = 280.0
+margin_bottom = 575.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 19 )
@@ -5263,33 +5273,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button33/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button33/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button33/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button33/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -5311,10 +5321,10 @@ __meta__ = {
 }
 
 [node name="Button34" type="Button" parent="Game/7x7"]
-margin_left = 640.0
-margin_top = 268.0
-margin_right = 768.0
-margin_bottom = 335.0
+margin_left = 280.0
+margin_top = 460.0
+margin_right = 336.0
+margin_bottom = 575.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 18 )
@@ -5330,33 +5340,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button34/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button34/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button34/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button34/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -5381,10 +5391,10 @@ __meta__ = {
 }
 
 [node name="Button35" type="Button" parent="Game/7x7"]
-margin_left = 768.0
-margin_top = 268.0
-margin_right = 896.0
-margin_bottom = 335.0
+margin_left = 336.0
+margin_top = 460.0
+margin_right = 392.0
+margin_bottom = 575.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 19 )
@@ -5400,33 +5410,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button35/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button35/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button35/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button35/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -5448,10 +5458,10 @@ __meta__ = {
 }
 
 [node name="Panel5" type="Panel" parent="Game/7x7"]
-margin_left = 896.0
-margin_top = 268.0
-margin_right = 1024.0
-margin_bottom = 335.0
+margin_left = 392.0
+margin_top = 460.0
+margin_right = 448.0
+margin_bottom = 575.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = ExtResource( 27 )
@@ -5467,8 +5477,8 @@ __meta__ = {
 }
 
 [node name="Points" type="Label" parent="Game/7x7/Panel5/GridContainer"]
-margin_right = 128.0
-margin_bottom = 33.0
+margin_right = 56.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/normal = ExtResource( 27 )
@@ -5478,26 +5488,26 @@ text = "1212"
 align = 1
 
 [node name="GridContainer" type="GridContainer" parent="Game/7x7/Panel5/GridContainer"]
-margin_top = 33.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_top = 57.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/hseparation = 0
 columns = 2
 
 [node name="TextureRect" type="TextureRect" parent="Game/7x7/Panel5/GridContainer/GridContainer"]
-margin_right = 64.0
-margin_bottom = 33.0
+margin_right = 28.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 2 )
 stretch_mode = 4
 
 [node name="BombQnt" type="Label" parent="Game/7x7/Panel5/GridContainer/GridContainer"]
-margin_left = 64.0
-margin_right = 128.0
-margin_bottom = 33.0
+margin_left = 28.0
+margin_right = 56.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
 custom_fonts/font = ExtResource( 31 )
@@ -5506,9 +5516,9 @@ text = "12"
 align = 1
 
 [node name="Button36" type="Button" parent="Game/7x7"]
-margin_top = 335.0
-margin_right = 128.0
-margin_bottom = 402.0
+margin_top = 575.0
+margin_right = 56.0
+margin_bottom = 690.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 18 )
@@ -5524,33 +5534,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button36/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button36/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button36/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button36/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -5575,10 +5585,10 @@ __meta__ = {
 }
 
 [node name="Button37" type="Button" parent="Game/7x7"]
-margin_left = 128.0
-margin_top = 335.0
-margin_right = 256.0
-margin_bottom = 402.0
+margin_left = 56.0
+margin_top = 575.0
+margin_right = 112.0
+margin_bottom = 690.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 19 )
@@ -5594,33 +5604,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button37/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button37/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button37/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button37/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -5642,10 +5652,10 @@ __meta__ = {
 }
 
 [node name="Button38" type="Button" parent="Game/7x7"]
-margin_left = 256.0
-margin_top = 335.0
-margin_right = 384.0
-margin_bottom = 402.0
+margin_left = 112.0
+margin_top = 575.0
+margin_right = 168.0
+margin_bottom = 690.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 18 )
@@ -5661,33 +5671,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button38/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button38/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button38/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button38/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -5709,10 +5719,10 @@ __meta__ = {
 }
 
 [node name="Button39" type="Button" parent="Game/7x7"]
-margin_left = 384.0
-margin_top = 335.0
-margin_right = 512.0
-margin_bottom = 402.0
+margin_left = 168.0
+margin_top = 575.0
+margin_right = 224.0
+margin_bottom = 690.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 19 )
@@ -5728,33 +5738,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button39/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button39/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button39/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button39/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -5776,10 +5786,10 @@ __meta__ = {
 }
 
 [node name="Button40" type="Button" parent="Game/7x7"]
-margin_left = 512.0
-margin_top = 335.0
-margin_right = 640.0
-margin_bottom = 402.0
+margin_left = 224.0
+margin_top = 575.0
+margin_right = 280.0
+margin_bottom = 690.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 18 )
@@ -5795,33 +5805,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button40/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button40/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button40/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button40/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -5843,10 +5853,10 @@ __meta__ = {
 }
 
 [node name="Button41" type="Button" parent="Game/7x7"]
-margin_left = 640.0
-margin_top = 335.0
-margin_right = 768.0
-margin_bottom = 402.0
+margin_left = 280.0
+margin_top = 575.0
+margin_right = 336.0
+margin_bottom = 690.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 19 )
@@ -5862,33 +5872,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button41/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button41/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button41/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button41/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -5910,10 +5920,10 @@ __meta__ = {
 }
 
 [node name="Button42" type="Button" parent="Game/7x7"]
-margin_left = 768.0
-margin_top = 335.0
-margin_right = 896.0
-margin_bottom = 402.0
+margin_left = 336.0
+margin_top = 575.0
+margin_right = 392.0
+margin_bottom = 690.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 18 )
@@ -5929,33 +5939,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button42/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button42/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button42/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button42/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -5980,10 +5990,10 @@ __meta__ = {
 }
 
 [node name="Panel6" type="Panel" parent="Game/7x7"]
-margin_left = 896.0
-margin_top = 335.0
-margin_right = 1024.0
-margin_bottom = 402.0
+margin_left = 392.0
+margin_top = 575.0
+margin_right = 448.0
+margin_bottom = 690.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = ExtResource( 27 )
@@ -5999,8 +6009,8 @@ __meta__ = {
 }
 
 [node name="Points" type="Label" parent="Game/7x7/Panel6/GridContainer"]
-margin_right = 128.0
-margin_bottom = 33.0
+margin_right = 56.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/normal = ExtResource( 27 )
@@ -6010,26 +6020,26 @@ text = "1212"
 align = 1
 
 [node name="GridContainer" type="GridContainer" parent="Game/7x7/Panel6/GridContainer"]
-margin_top = 33.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_top = 57.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/hseparation = 0
 columns = 2
 
 [node name="TextureRect" type="TextureRect" parent="Game/7x7/Panel6/GridContainer/GridContainer"]
-margin_right = 64.0
-margin_bottom = 33.0
+margin_right = 28.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 2 )
 stretch_mode = 4
 
 [node name="BombQnt" type="Label" parent="Game/7x7/Panel6/GridContainer/GridContainer"]
-margin_left = 64.0
-margin_right = 128.0
-margin_bottom = 33.0
+margin_left = 28.0
+margin_right = 56.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
 custom_fonts/font = ExtResource( 31 )
@@ -6038,9 +6048,9 @@ text = "12"
 align = 1
 
 [node name="Button43" type="Button" parent="Game/7x7"]
-margin_top = 402.0
-margin_right = 128.0
-margin_bottom = 469.0
+margin_top = 690.0
+margin_right = 56.0
+margin_bottom = 805.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 19 )
@@ -6056,33 +6066,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button43/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button43/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button43/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button43/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -6104,10 +6114,10 @@ __meta__ = {
 }
 
 [node name="Button44" type="Button" parent="Game/7x7"]
-margin_left = 128.0
-margin_top = 402.0
-margin_right = 256.0
-margin_bottom = 469.0
+margin_left = 56.0
+margin_top = 690.0
+margin_right = 112.0
+margin_bottom = 805.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 18 )
@@ -6123,33 +6133,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button44/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button44/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button44/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button44/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -6171,10 +6181,10 @@ __meta__ = {
 }
 
 [node name="Button45" type="Button" parent="Game/7x7"]
-margin_left = 256.0
-margin_top = 402.0
-margin_right = 384.0
-margin_bottom = 469.0
+margin_left = 112.0
+margin_top = 690.0
+margin_right = 168.0
+margin_bottom = 805.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 19 )
@@ -6190,33 +6200,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button45/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button45/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button45/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button45/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -6238,10 +6248,10 @@ __meta__ = {
 }
 
 [node name="Button46" type="Button" parent="Game/7x7"]
-margin_left = 384.0
-margin_top = 402.0
-margin_right = 512.0
-margin_bottom = 469.0
+margin_left = 168.0
+margin_top = 690.0
+margin_right = 224.0
+margin_bottom = 805.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 18 )
@@ -6257,33 +6267,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button46/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button46/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button46/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button46/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -6305,10 +6315,10 @@ __meta__ = {
 }
 
 [node name="Button47" type="Button" parent="Game/7x7"]
-margin_left = 512.0
-margin_top = 402.0
-margin_right = 640.0
-margin_bottom = 469.0
+margin_left = 224.0
+margin_top = 690.0
+margin_right = 280.0
+margin_bottom = 805.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 19 )
@@ -6324,33 +6334,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button47/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button47/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button47/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button47/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -6372,10 +6382,10 @@ __meta__ = {
 }
 
 [node name="Button48" type="Button" parent="Game/7x7"]
-margin_left = 640.0
-margin_top = 402.0
-margin_right = 768.0
-margin_bottom = 469.0
+margin_left = 280.0
+margin_top = 690.0
+margin_right = 336.0
+margin_bottom = 805.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 18 )
@@ -6391,33 +6401,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button48/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button48/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button48/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button48/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -6442,10 +6452,10 @@ __meta__ = {
 }
 
 [node name="Button49" type="Button" parent="Game/7x7"]
-margin_left = 768.0
-margin_top = 402.0
-margin_right = 896.0
-margin_bottom = 469.0
+margin_left = 336.0
+margin_top = 690.0
+margin_right = 392.0
+margin_bottom = 805.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 19 )
@@ -6461,33 +6471,33 @@ __meta__ = {
 }
 
 [node name="bombMark" type="TextureRect" parent="Game/7x7/Button49/MarkContainer"]
-margin_right = 62.0
-margin_bottom = 31.0
+margin_right = 26.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="oneMark" type="TextureRect" parent="Game/7x7/Button49/MarkContainer"]
-margin_left = 66.0
-margin_right = 128.0
-margin_bottom = 31.0
+margin_left = 30.0
+margin_right = 56.0
+margin_bottom = 55.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="twoMark" type="TextureRect" parent="Game/7x7/Button49/MarkContainer"]
-margin_top = 35.0
-margin_right = 62.0
-margin_bottom = 66.0
+margin_top = 59.0
+margin_right = 26.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
 
 [node name="threeMark" type="TextureRect" parent="Game/7x7/Button49/MarkContainer"]
-margin_left = 66.0
-margin_top = 35.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_left = 30.0
+margin_top = 59.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 stretch_mode = 6
@@ -6509,10 +6519,10 @@ __meta__ = {
 }
 
 [node name="Panel7" type="Panel" parent="Game/7x7"]
-margin_left = 896.0
-margin_top = 402.0
-margin_right = 1024.0
-margin_bottom = 469.0
+margin_left = 392.0
+margin_top = 690.0
+margin_right = 448.0
+margin_bottom = 805.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = ExtResource( 27 )
@@ -6528,8 +6538,8 @@ __meta__ = {
 }
 
 [node name="Points" type="Label" parent="Game/7x7/Panel7/GridContainer"]
-margin_right = 128.0
-margin_bottom = 33.0
+margin_right = 56.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/normal = ExtResource( 27 )
@@ -6539,26 +6549,26 @@ text = "1212"
 align = 1
 
 [node name="GridContainer" type="GridContainer" parent="Game/7x7/Panel7/GridContainer"]
-margin_top = 33.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_top = 57.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/hseparation = 0
 columns = 2
 
 [node name="TextureRect" type="TextureRect" parent="Game/7x7/Panel7/GridContainer/GridContainer"]
-margin_right = 64.0
-margin_bottom = 33.0
+margin_right = 28.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 2 )
 stretch_mode = 4
 
 [node name="BombQnt" type="Label" parent="Game/7x7/Panel7/GridContainer/GridContainer"]
-margin_left = 64.0
-margin_right = 128.0
-margin_bottom = 33.0
+margin_left = 28.0
+margin_right = 56.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
 custom_fonts/font = ExtResource( 31 )
@@ -6567,9 +6577,9 @@ text = "12"
 align = 1
 
 [node name="Panel8" type="Panel" parent="Game/7x7"]
-margin_top = 469.0
-margin_right = 128.0
-margin_bottom = 536.0
+margin_top = 805.0
+margin_right = 56.0
+margin_bottom = 920.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = ExtResource( 27 )
@@ -6585,8 +6595,8 @@ __meta__ = {
 }
 
 [node name="Points" type="Label" parent="Game/7x7/Panel8/GridContainer"]
-margin_right = 128.0
-margin_bottom = 33.0
+margin_right = 56.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/normal = ExtResource( 27 )
@@ -6596,26 +6606,26 @@ text = "1212"
 align = 1
 
 [node name="GridContainer" type="GridContainer" parent="Game/7x7/Panel8/GridContainer"]
-margin_top = 33.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_top = 57.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/hseparation = 0
 columns = 2
 
 [node name="TextureRect" type="TextureRect" parent="Game/7x7/Panel8/GridContainer/GridContainer"]
-margin_right = 64.0
-margin_bottom = 33.0
+margin_right = 28.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 2 )
 stretch_mode = 4
 
 [node name="BombQnt" type="Label" parent="Game/7x7/Panel8/GridContainer/GridContainer"]
-margin_left = 64.0
-margin_right = 128.0
-margin_bottom = 33.0
+margin_left = 28.0
+margin_right = 56.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
 custom_fonts/font = ExtResource( 31 )
@@ -6624,10 +6634,10 @@ text = "12"
 align = 1
 
 [node name="Panel9" type="Panel" parent="Game/7x7"]
-margin_left = 128.0
-margin_top = 469.0
-margin_right = 256.0
-margin_bottom = 536.0
+margin_left = 56.0
+margin_top = 805.0
+margin_right = 112.0
+margin_bottom = 920.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = ExtResource( 27 )
@@ -6643,8 +6653,8 @@ __meta__ = {
 }
 
 [node name="Points" type="Label" parent="Game/7x7/Panel9/GridContainer"]
-margin_right = 128.0
-margin_bottom = 33.0
+margin_right = 56.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/normal = ExtResource( 27 )
@@ -6654,26 +6664,26 @@ text = "1212"
 align = 1
 
 [node name="GridContainer" type="GridContainer" parent="Game/7x7/Panel9/GridContainer"]
-margin_top = 33.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_top = 57.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/hseparation = 0
 columns = 2
 
 [node name="TextureRect" type="TextureRect" parent="Game/7x7/Panel9/GridContainer/GridContainer"]
-margin_right = 64.0
-margin_bottom = 33.0
+margin_right = 28.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 2 )
 stretch_mode = 4
 
 [node name="BombQnt" type="Label" parent="Game/7x7/Panel9/GridContainer/GridContainer"]
-margin_left = 64.0
-margin_right = 128.0
-margin_bottom = 33.0
+margin_left = 28.0
+margin_right = 56.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
 custom_fonts/font = ExtResource( 31 )
@@ -6682,10 +6692,10 @@ text = "12"
 align = 1
 
 [node name="Panel10" type="Panel" parent="Game/7x7"]
-margin_left = 256.0
-margin_top = 469.0
-margin_right = 384.0
-margin_bottom = 536.0
+margin_left = 112.0
+margin_top = 805.0
+margin_right = 168.0
+margin_bottom = 920.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = ExtResource( 27 )
@@ -6701,8 +6711,8 @@ __meta__ = {
 }
 
 [node name="Points" type="Label" parent="Game/7x7/Panel10/GridContainer"]
-margin_right = 128.0
-margin_bottom = 33.0
+margin_right = 56.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/normal = ExtResource( 27 )
@@ -6712,26 +6722,26 @@ text = "1212"
 align = 1
 
 [node name="GridContainer" type="GridContainer" parent="Game/7x7/Panel10/GridContainer"]
-margin_top = 33.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_top = 57.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/hseparation = 0
 columns = 2
 
 [node name="TextureRect" type="TextureRect" parent="Game/7x7/Panel10/GridContainer/GridContainer"]
-margin_right = 64.0
-margin_bottom = 33.0
+margin_right = 28.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 2 )
 stretch_mode = 4
 
 [node name="BombQnt" type="Label" parent="Game/7x7/Panel10/GridContainer/GridContainer"]
-margin_left = 64.0
-margin_right = 128.0
-margin_bottom = 33.0
+margin_left = 28.0
+margin_right = 56.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
 custom_fonts/font = ExtResource( 31 )
@@ -6740,10 +6750,10 @@ text = "12"
 align = 1
 
 [node name="Panel11" type="Panel" parent="Game/7x7"]
-margin_left = 384.0
-margin_top = 469.0
-margin_right = 512.0
-margin_bottom = 536.0
+margin_left = 168.0
+margin_top = 805.0
+margin_right = 224.0
+margin_bottom = 920.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = ExtResource( 27 )
@@ -6759,8 +6769,8 @@ __meta__ = {
 }
 
 [node name="Points" type="Label" parent="Game/7x7/Panel11/GridContainer"]
-margin_right = 128.0
-margin_bottom = 33.0
+margin_right = 56.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/normal = ExtResource( 27 )
@@ -6770,26 +6780,26 @@ text = "1212"
 align = 1
 
 [node name="GridContainer" type="GridContainer" parent="Game/7x7/Panel11/GridContainer"]
-margin_top = 33.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_top = 57.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/hseparation = 0
 columns = 2
 
 [node name="TextureRect" type="TextureRect" parent="Game/7x7/Panel11/GridContainer/GridContainer"]
-margin_right = 64.0
-margin_bottom = 33.0
+margin_right = 28.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 2 )
 stretch_mode = 4
 
 [node name="BombQnt" type="Label" parent="Game/7x7/Panel11/GridContainer/GridContainer"]
-margin_left = 64.0
-margin_right = 128.0
-margin_bottom = 33.0
+margin_left = 28.0
+margin_right = 56.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
 custom_fonts/font = ExtResource( 31 )
@@ -6798,10 +6808,10 @@ text = "12"
 align = 1
 
 [node name="Panel12" type="Panel" parent="Game/7x7"]
-margin_left = 512.0
-margin_top = 469.0
-margin_right = 640.0
-margin_bottom = 536.0
+margin_left = 224.0
+margin_top = 805.0
+margin_right = 280.0
+margin_bottom = 920.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = ExtResource( 27 )
@@ -6817,8 +6827,8 @@ __meta__ = {
 }
 
 [node name="Points" type="Label" parent="Game/7x7/Panel12/GridContainer"]
-margin_right = 128.0
-margin_bottom = 33.0
+margin_right = 56.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/normal = ExtResource( 27 )
@@ -6828,26 +6838,26 @@ text = "1212"
 align = 1
 
 [node name="GridContainer" type="GridContainer" parent="Game/7x7/Panel12/GridContainer"]
-margin_top = 33.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_top = 57.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/hseparation = 0
 columns = 2
 
 [node name="TextureRect" type="TextureRect" parent="Game/7x7/Panel12/GridContainer/GridContainer"]
-margin_right = 64.0
-margin_bottom = 33.0
+margin_right = 28.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 2 )
 stretch_mode = 4
 
 [node name="BombQnt" type="Label" parent="Game/7x7/Panel12/GridContainer/GridContainer"]
-margin_left = 64.0
-margin_right = 128.0
-margin_bottom = 33.0
+margin_left = 28.0
+margin_right = 56.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
 custom_fonts/font = ExtResource( 31 )
@@ -6856,10 +6866,10 @@ text = "12"
 align = 1
 
 [node name="Panel13" type="Panel" parent="Game/7x7"]
-margin_left = 640.0
-margin_top = 469.0
-margin_right = 768.0
-margin_bottom = 536.0
+margin_left = 280.0
+margin_top = 805.0
+margin_right = 336.0
+margin_bottom = 920.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = ExtResource( 27 )
@@ -6875,8 +6885,8 @@ __meta__ = {
 }
 
 [node name="Points" type="Label" parent="Game/7x7/Panel13/GridContainer"]
-margin_right = 128.0
-margin_bottom = 33.0
+margin_right = 56.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/normal = ExtResource( 27 )
@@ -6886,26 +6896,26 @@ text = "1212"
 align = 1
 
 [node name="GridContainer" type="GridContainer" parent="Game/7x7/Panel13/GridContainer"]
-margin_top = 33.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_top = 57.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/hseparation = 0
 columns = 2
 
 [node name="TextureRect" type="TextureRect" parent="Game/7x7/Panel13/GridContainer/GridContainer"]
-margin_right = 64.0
-margin_bottom = 33.0
+margin_right = 28.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 2 )
 stretch_mode = 4
 
 [node name="BombQnt" type="Label" parent="Game/7x7/Panel13/GridContainer/GridContainer"]
-margin_left = 64.0
-margin_right = 128.0
-margin_bottom = 33.0
+margin_left = 28.0
+margin_right = 56.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
 custom_fonts/font = ExtResource( 31 )
@@ -6914,10 +6924,10 @@ text = "12"
 align = 1
 
 [node name="Panel14" type="Panel" parent="Game/7x7"]
-margin_left = 768.0
-margin_top = 469.0
-margin_right = 896.0
-margin_bottom = 536.0
+margin_left = 336.0
+margin_top = 805.0
+margin_right = 392.0
+margin_bottom = 920.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/panel = ExtResource( 27 )
@@ -6933,8 +6943,8 @@ __meta__ = {
 }
 
 [node name="Points" type="Label" parent="Game/7x7/Panel14/GridContainer"]
-margin_right = 128.0
-margin_bottom = 33.0
+margin_right = 56.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/normal = ExtResource( 27 )
@@ -6944,26 +6954,26 @@ text = "1212"
 align = 1
 
 [node name="GridContainer" type="GridContainer" parent="Game/7x7/Panel14/GridContainer"]
-margin_top = 33.0
-margin_right = 128.0
-margin_bottom = 66.0
+margin_top = 57.0
+margin_right = 56.0
+margin_bottom = 114.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/hseparation = 0
 columns = 2
 
 [node name="TextureRect" type="TextureRect" parent="Game/7x7/Panel14/GridContainer/GridContainer"]
-margin_right = 64.0
-margin_bottom = 33.0
+margin_right = 28.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 2 )
 stretch_mode = 4
 
 [node name="BombQnt" type="Label" parent="Game/7x7/Panel14/GridContainer/GridContainer"]
-margin_left = 64.0
-margin_right = 128.0
-margin_bottom = 33.0
+margin_left = 28.0
+margin_right = 56.0
+margin_bottom = 57.0
 size_flags_horizontal = 3
 size_flags_vertical = 7
 custom_fonts/font = ExtResource( 31 )
@@ -6972,10 +6982,10 @@ text = "12"
 align = 1
 
 [node name="Mark" type="Button" parent="Game/7x7"]
-margin_left = 896.0
-margin_top = 469.0
-margin_right = 1024.0
-margin_bottom = 536.0
+margin_left = 392.0
+margin_top = 805.0
+margin_right = 448.0
+margin_bottom = 920.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_styles/hover = ExtResource( 28 )
@@ -6992,11 +7002,10 @@ __meta__ = {
 }
 
 [node name="9x9" type="GridContainer" parent="Game"]
-visible = false
 anchor_top = 0.1
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_bottom = 0.539978
+margin_bottom = 0.540039
 custom_constants/vseparation = 0
 custom_constants/hseparation = 0
 columns = 10
@@ -13686,6 +13695,8 @@ visible = false
 modulate = Color( 0, 0, 0, 0.784314 )
 anchor_right = 1.0
 anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
