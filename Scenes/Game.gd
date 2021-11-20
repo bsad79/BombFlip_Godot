@@ -34,7 +34,7 @@ func _ready():
 		#musicChannel.stream = load("res://Sounds/Explosion.wav")
 		pass
 	get_node("MarkWindow").visible = false
-	difficultLvl = 7
+	difficultLvl = 1
 	difficultCheck()
 	valueSet()
 	pass
